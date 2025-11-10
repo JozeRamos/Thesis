@@ -1,0 +1,47 @@
+Choose a scenario:
+
+Calory Tracker
+Bug Hunt
+Ride Sharing
+Medicine
+1
+
+Calory Tracker scenario selected.
+
+Here is the scenario description:
+
+You're building a calorie tracker. It should ask how many meals were eaten, take calorie inputs, then give feedback based on total calories. What's the first part you'll implement?
+
+For this scenario you don't need to write code, you can just state what you would do to complete the task.
+
+I would write a message to the user asking for how many meals the user already ate
+
+Nice thinking! Asking for the number of meals gives structure to the loop. Now, consider what variable name you'll use to store the meal count. How will you use this variable to control your loop and ensure you get input for each meal?
+
+Next Steps: Great job on asking the user for the number of meals! Now, let's think about how we'll keep track of the total calories consumed. You'll need a variable to store this value. Consider a name that makes sense for this purpose, like "total_calories" or "daily_intake". What's your plan for initializing this variable, and how will you use it to calculate the total calories?
+
+I would store this information into a variable like "daily_calories". Then I would ask the user in each consumed meal what was the consumed calories. For each of the consumed meals I would iterate through the consumed calories and increment the value of my variable "Daily_calories"
+
+Let's focus on initializing the "daily_calories" variable. Since you haven't consumed any calories yet, it makes sense to start with a value of 0. This way, you can ensure your total calorie count is accurate. Now, think about how you'll use this variable to calculate the total calories. Will you add each meal's calories to it, and if so, how will you do that?
+
+Next Steps: It sounds like you're on the right track! You've got a plan to initialize the "daily_calories" variable and use it to calculate the total calories. Now, let's think about how you'll use the number of meals to control your loop. You mentioned iterating through each consumed meal, which is a great start. How will you use the meal count to determine when to stop asking for calorie input? Think about how you can use the meal count to loop through each meal and get the calorie input in a single run.
+
+I would initialize the variable with 0. Ask the user with an input message how many meals he has done. Then store this information into a new variable "number_meals". Then iterate through the "number_meals" and ask the user how many calories was in each meal. This value should be summed to the "daily_calories" variable
+
+Nice thinking! You're on the right track with using the "number_meals" variable to control the loop. To iterate through each meal, consider using the range() function. Think about how you can use this function to create a loop that runs number_meals times, making it easy to ask the user for calorie input and sum it to the "daily_calories" variable.
+
+Next Steps: Excellent job on setting up the loop! Now, think about what happens inside the loop. You'll need to ask the user for the calories of each meal. How will you ask the user for this information in a way that makes sense for each meal? Consider using a prompt that includes the meal number, like "Enter calories for meal 1" or "How many calories were in meal 2?" This will help the user understand what you're asking for.
+
+Then iterate through the "number_meals" and ask the user how many calories was in each meal.
+
+Here's a revised response:
+
+"Nice work! To make the user experience seamless, consider using an f-string to include the meal number in the prompt. For example, f"Enter calories for meal {meal_number}". This approach creates a clear and concise prompt that guides the user through the calorie input process. By using an f-string, you'll dynamically include the meal number, making the prompt more intuitive and user-friendly. This refinement will significantly improve the user's experience and make the input process more engaging."
+
+Next Steps: Great job on planning to ask the user for calorie input for each meal! Now, think about how you'll add each meal's calories to the "daily_calories" variable. Consider using the += operator to accumulate the total calories. How will you ensure that the calorie input is correctly added to the "daily_calories" variable?
+
+This value should be summed to the "daily_calories" variable
+
+Great job on planning to sum the calories to daily_calories! When you add each meal's calories, consider using the += operator to ensure accurate accumulation. Think about how you'll update the daily_calories variable with each new meal's calories. How will you use the += operator to achieve this?
+
+Next Steps: Excellent thinking! You've got the calories summed up nicely to daily_calories. Now, it's time to share the results with the user. Think about how you'll display the total calories in a way that's easy to understand. Will you use a simple print statement or something more visually appealing? What kind of message will you provide based on the total calories? Will you use if-elif-else statements to give personalized feedback?

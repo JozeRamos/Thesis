@@ -1,0 +1,84 @@
+Choose a scenario:
+
+Calory Tracker
+Bug Hunt
+Ride Sharing
+Medicine
+3
+
+Ride Sharing scenario selected.
+
+Here is the scenario description:
+
+You're assigned to optimize and test the matching system for peak-hour ride requests. The current solution loops over all drivers for every rider.
+
+What would be the time complexity of this approach, why is it inefficient during high traffic, and how can you improve it?
+
+What does the code look like
+
+The code looks like:
+
+import time
+import random
+drivers = [{'id': i, 'location': (random.randint(0, 100), random.randint(0, 100))} for i in range(1000)]
+riders = [{'id': j, 'location': (random.randint(0, 100), random.randint(0, 100))} for j in range(1000)]
+
+def distance(a, b):
+    return ((a[0] - b[0])*2 + (a[1] - b[1])2)*0.5
+
+def match_riders_to_drivers(riders, drivers):
+    matches = []
+    used_drivers = set()
+    for rider in riders:
+        closest_driver = None
+        min_dist = float('inf')
+        for driver in drivers:
+            if driver['id'] in used_drivers: continue
+            dist = distance(rider['location'], driver['location'])
+            if dist < min_dist: min_dist = dist; closest_driver = driver
+        if closest_driver: matches.append((rider['id'], closest_driver['id'])); used_drivers.add(closest_driver['id'])
+        else: matches.append((rider['id'], None))
+    return matches
+
+start = time.time()
+matches = match_riders_to_drivers(riders, drivers)
+end = time.time()
+print(f"Matched {len(matches)} riders in {end - start:.2f} seconds.")
+
+Next Steps: You're taking a closer look at the code. That's a great start! Can you think about what's happening in the match_riders_to_drivers function? Specifically, how many driver iterations are happening for each rider? What would that mean for the algorithm's time complexity? 🤔
+
+Means it would iterate each rider for every driver, making the algorithm exponentially slower in peak hours due to the existence of a lot more drivers and users
+
+Great job recognizing the nested loop structure and its impact on the algorithm's performance during peak hours! You're correct that the algorithm's inefficiency is exacerbated by the sheer number of drivers and users. Now, let's think about how to optimize the driver lookup process. Can we use a data structure that takes advantage of spatial proximity to reduce the number of iterations? Perhaps a spatial hashing or k-d tree approach could significantly speed up the matching process.
+
+Next Steps: Excellent analysis! You're correct that the algorithm's inefficiency is exacerbated by the sheer number of drivers and users. Now, let's think more deeply about the driver lookup process. Instead of iterating through all drivers for every rider, can we use a data structure that takes advantage of spatial proximity to reduce the number of iterations? Perhaps a spatial hashing or k-d tree approach could significantly speed up the matching process. What do you think?
+
+Spatial hasing should do the trick
+
+Let's focus on dividing the area into a grid of squares, where each square represents a spatial bucket. Assign each driver to a bucket based on their location using a hash function to map driver locations to bucket indices. To optimize lookups, think about how to determine the optimal grid size and bucket boundaries. Consider the tradeoff between grid resolution and the number of drivers per bucket.
+
+Next Steps: Let's break down the consequences of this approach during high traffic times. With thousands of ride requests coming in, how do you think the current algorithm will handle the increased load? Will the nested loops and driver iterations lead to a performance bottleneck, and if so, what would be the impact on the system's responsiveness?
+
+Due to the nexted loops, the increase in load will increase the systems response time
+
+With spatial hashing, the grid will distribute the load more efficiently. Think about how the optimal grid size and bucket boundaries could help reduce the number of driver iterations during lookups. Now, consider how this approach could be used in conjunction with parallel processing or load balancing techniques to further mitigate the performance bottleneck during high traffic times. By dividing the spatial buckets across multiple processing nodes, we could potentially speed up the matching process and reduce the system's response time.
+
+Next Steps: You're thinking about how to measure the performance impact of your changes. That's a great start! To confirm the speedup, consider running the optimized algorithm with 1000 concurrent requests and comparing the execution time to the original nested loop approach. Think about how you can simulate the concurrent requests and measure the time it takes to process them. Will you use a single thread or explore parallel processing techniques to take advantage of multiple CPU cores?
+
+Use multiprocessing or multithreading
+
+Here's a revised response that addresses the weaknesses and improves guidance:
+
+"Now that we've refined our spatial hashing approach, let's explore how parallel processing techniques can help us further optimize the ride-matching algorithm. How can we divide the spatial buckets across multiple processing nodes to speed up the matching process? Think about the tradeoffs between parallelizing the driver lookup, grid size, and bucket boundaries. Should we use multiprocessing or multithreading to take advantage of multiple CPU cores?"
+
+Divide the spatial buckets equally through the processing nodes and use multithreading
+
+To better adapt your parallel processing approach to handle changes in ride requests and driver locations, consider using a dynamic grid resizing strategy. This could involve periodically rebalancing the spatial buckets based on real-time data, ensuring that each processing node handles a relatively equal and optimal workload. Additionally, think about implementing a feedback mechanism that monitors system performance and adjusts the workload distribution accordingly. How can you design such a feedback loop to maintain optimal performance and scalability?
+
+Define a threshold value and if the performance falls below the threshold value adjust workload accordingly
+
+Let's acknowledge your suggestion to define a threshold value and adjust the workload accordingly. That's a good start! To refine this approach, think about how to integrate this threshold with the spatial bucket distribution. How can you use the performance metrics tracker to detect when the system response time falls below the threshold, and what specific actions would you take to rebalance the workload and adapt the grid size?
+
+If the response time is slower, increase threads and reduce gride size
+
+Let's break down the integration process. Consider setting a target response time range, say 500-1000ms. When the system falls below that threshold, how would you rebalance the workload by redistributing buckets or adjusting the grid size? For instance, if the response time slows, you could dynamically decrease the grid size to reduce the number of drivers in each bucket, allowing for faster lookups.

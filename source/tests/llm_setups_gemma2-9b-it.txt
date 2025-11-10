@@ -1,0 +1,1509 @@
+------------------------gemma2-9b-it------------------------
+
+------------------------default_llm_setup------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[False, False], [False], [False, False], [False], [False]]
+User Input: What is the circunference of the Earth?
+LLM Response: That's a big question about Earth! Let's focus on something a little smaller right now.  Think about what information you need to know before you can start tracking how many calories someone ate today. 
+
+
+Next Steps: That's a great start! To track calories, we need to know how many meals we're dealing with.  Before we can add everything up, how will you figure out how many times to ask for calorie input? Think about how you'd organize your steps!  
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I ask the user the amount of meals eaten using input()
+LLM Response: That's a good start! Now think about how you'd store that number in your program so you can use it to ask for each meal's calories. What kind of name would make sense for that value?  
+
+
+
+Next Steps: That's great! So you'll know how many meals to work with. Now,  imagine you're  adding up all those meal calories – where would you keep the running total?  Think of a name that would make sense for that value.   
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I use a integer to store the value of the user input and use another integer to store the value of the total calories
+LLM Response: Think about what `number_of_meals` represents in a scenario where someone eats breakfast, lunch, and dinner. How could this value help us get the total calories? 
+
+
+Next Steps: "Excellent! Now, storing the number of meals is a great first step.  Think about how you'd keep track of the total calories. Where would you put that number so you can add up each meal?" 
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I don't know what loops are can you explain them to me?
+LLM Response: Think of loops as instructions that do the same thing over and over again until a certain condition is met. Imagine you're adding up calories from each meal - a loop would let your program do that automatically for every meal, instead of writing the same code many times!  
+
+
+
+
+
+Next Steps: That's a good start to understanding loops!  Now, think about how you want to keep track of the total calories as you go.  Where would you store that running sum so you can add up each meal's calories? 
+
+ 
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I would use a for loop with the number of meals
+LLM Response: Imagine your loop is like a repeating request for 'How many calories were in this meal?' 
+
+What kind of names would help you remember that you're keeping track of all the calories added up so far?  
+
+
+
+
+
+
+Next Steps: That's a great idea using a loop! Now, think about how you'd keep track of all the calories as you add them up.  What kind of name would make sense for a variable that holds the running total? 
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I ask the user for input of the calories
+LLM Response: That's a great start! Now you've got the calories from the user—think about where you would keep track of all those calories added up as the user enters each meal.  Can you think of a good name for a variable that would hold this value?  
+
+In programming, we use variables like named containers to hold information. Think about them like little boxes in your program labeled with meaningful names.
+
+
+
+
+
+Next Steps: That's a good start! Now you have the calorie for each meal. Think about how you'd keep track of all those calories as the program goes along.  You'll need a place to  "add up" the calories to get the total. What kind of name would make sense for that total sum?  
+
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: I add up all of the calories into a total calories variable
+LLM Response: Excellent! Now, remember when you asked the user for each meal's calories? You can use that input to add to your `total_calories` every time the loop runs.  Try using `total_calories += calories_from_meal`  to keep things neat and organized!  
+
+
+Next Steps: That's a great start! Now that you have a place to store the total calories, think about how to use that  `total_calories` variable  inside the loop. How can you add up the calorie inputs for each meal and keep track of the running total?  Just remember, each meal will contribute a new calorie amount to the running total.   
+
+
+
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: I can give a message based of the amount of calories, like if the amount is over 2000 i will print something like "to many calories"
+LLM Response: That's a good start thinking about the feedback! Remember, before you can tell the user their total calories, you need to calculate it from all the meal inputs. Imagine the program is already asking about meals and collecting calories. How would it turn those individual calories into one final number to show the user?  
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: What does the code look like?
+LLM Response: ```
+numberOfMeals = input()
+totalCalories = 0
+```
+
+Next Steps: "Okay, you've set up  your initial variables. To really make this calorie tracker work, you need to ask for the calories for each meal one by one. How would you use a loop to handle that? Just imagine the program running through each meal, asking 'How many calories were in this meal?'" 
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [True], [False, False], [False], [False]]
+User Input: I would create a for loop inside the input and do a if that doesn't let values bellow 0
+LLM Response: Remember, your `for` loop needs to know how many times to repeat. Can you think of a way to use `number_of_meals` to tell the loop how many meals to process?  In Python, the `range()` function can help you easily create a sequence of numbers for your loop. It might be helpful here! 
+
+
+Next Steps: Okay, so you've got the loop structure set up using  `range()` and `number_of_meals`. Now, think about what happens *inside* that loop. How would you  ask the user about each meal's calorie content so you can keep track of the totals?  Remember our earlier conversation about storing information securely.  
+
+
+
+
+
+
+
+----------------------------------------------------------
+------------------------no_chat_history_llm_setup------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[False, False], [False], [False, False], [False], [False]]
+User Input: What is the circunference of the Earth?
+LLM Response: That's a fascinating fact about the Earth!  But let's take this back to our calorie tracker. To figure out the total calories someone eats, what information about each meal would be helpful? 
+
+
+
+
+
+Next Steps: That's a good start! To track calories, you'll need to know how many meals you're adding up. Before you start collecting calorie information for each meal, what kind of question would you ask the user to set that foundation?   
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I ask the user the amount of meals eaten using input()
+LLM Response: That's great! With the meal count figured out, how would you give a name to hold the total number of meals in your program? Remember, you can store values in special containers called variables.  
+
+
+
+Next Steps: That's a good start! To keep track of the total calorie intake, you'll need a place to store that information.  Think about what kind of container in your program could hold a number that keeps growing as you add meal calories.  
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I use a integer to store the value of the user input and use another integer to store the value of the total calories
+LLM Response: That sounds like a good start! To track calories, we need to know how many meals the user had. How would you get that information from the user?  
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I don't know what loops are can you explain them to me?
+LLM Response: Loops are like a handy tool that lets you repeat a set of instructions multiple times. Imagine asking about each meal's calories – a loop could help you do that automatically for every meal you have.  
+
+
+
+
+
+Next Steps: Okay, awesome!  Loops are definitely useful in this scenario. Now, before you can add up all those meal calories, you'll need a place to store the running total. How do you think you'd set that up in your code? 
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I would use a for loop with the number of meals
+LLM Response: That's a good start! Let's figure out how to ask the user how many meals they had. Remember, we want to store their answer so we can loop through it later. What data type do you think is best for storing that?  
+
+
+Next Steps: "That's great! To keep track of the total calories, we need a place to store the running sum. What kind of variable would be most suitable for holding a number like that?"  
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I ask the user for input of the calories
+LLM Response: You're working on collecting calorie information for each meal.  It would be helpful to store how many meals the user had in a variable. Think about how you'd store that information so your program can use it later. 
+
+
+
+Next Steps: That's a great start! Now, before you start adding up calories, you'll need somewhere to store the running total.  Think about how you'd create a "container" in your program to hold that sum. 
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: I add up all of the calories into a total calories variable
+LLM Response: Have you considered using a loop to collect calorie information for each meal? A loop lets you ask for input repeatedly without writing the same code many times, making your program more efficient.  
+
+
+Next Steps: That's a great start! Now think about how you'll  actually go through each meal and get its calories. How can you make your program ask for and store the calorie information for every meal in a structured way?  
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: I can give a message based of the amount of calories, like if the amount is over 2000 i will print something like "to many calories"
+LLM Response: Remember, you'll need to know how many meals the user ate. How could you get that number from them using Python's input function? 
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: What does the code look like?
+LLM Response: ```python
+numberOfMeals = input()
+totalCalories = 0 
+```
+
+Next Steps: That's a great start! Now, think about how you'd repeat the process of getting calorie input for each meal. How would you make sure you collect information for every meal the user specified?  
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [True], [False, False], [False], [False]]
+User Input: I would create a for loop inside the input and do a if that doesn't let values bellow 0
+LLM Response: Think about how you can make sure the user enters a valid positive calorie amount for each meal. For instance, you might want to make sure the number is greater than zero before adding it to the total. 
+
+
+Next Steps: That's a great start on making sure the input is sensible! Now, think about how you'll actually keep track of the total calories as you go through each meal. Where would you store this running sum? 
+
+
+----------------------------------------------------------
+
+-----------------------------no_rag_history_llm_setup-----------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[False, False], [False], [False, False], [False], [False]]
+User Input: What is the circunference of the Earth?
+LLM Response: That's a big question! For now, let's keep our focus on the calorie tracker.  To build it, we need to figure out how many calories are in each meal.  What information about meals could be helpful to track?  
+
+
+Next Steps: That's a great start! To keep track of all the meals,  we need to know how many there are.  How can you get that number from the user and make sure your program uses it correctly? 
+
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I ask the user the amount of meals eaten using input()
+LLM Response: Remember, variables hold different kinds of information. What type of data would represent a whole number of meals?  What makes sense to you for a variable name? 
+
+
+Next Steps: That's a good start! Let's make sure you have a place to keep track of the total calories as you gather them. How will you store the sum of all these meal calories?  Think about what kind of data would make sense for this.  
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I use a integer to store the value of the user input and use another integer to store the value of the total calories
+LLM Response: That's right, integers are great for storing whole numbers like calorie counts.  Let's think about how to get those counts from the user.  Remember, we need the number of meals to know how many times to ask for calorie input.  How can we get that information from the user and store it somewhere? 
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I don't know what loops are can you explain them to me?
+LLM Response: Let me show you a simple example of a loop:
+
+```python
+for i in range(3):
+  print("This line is inside the loop!")
+```
+This loop runs three times, printing the message each time.  Think about how you could use a loop to repeatedly ask for calories for each meal!
+
+
+Next Steps: That's a great start to understanding loops! Now, imagine you want to track all the calories someone eats throughout the day. You'll need a place to store the running total of those calories.  How do you store that total value as you collect input for each meal?  
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I would use a for loop with the number of meals
+LLM Response: That's a good start! Remember, every program needs a clear plan. What info should you collect first to know how many times your loop should run?  
+
+
+Next Steps: "Thinking about calculations, what kind of container will hold the sum of all the meals?" 
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I ask the user for input of the calories
+LLM Response: Think about how you'll use `input()` to collect each meal's calorie count. What kind of question would you ask the user to get that information?  
+
+
+Next Steps: That's a great start! You'll want to keep track of the total calories as you go along.  Think about how you'd store that sum  – where in your program would you keep track of the total so far? 
+
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: I add up all of the calories into a total calories variable
+LLM Response: Excellent! Remembering the total calories will be key. How could you keep adding the calories from each meal into your total calories variable as you go? Remember, you'll be collecting data for each meal.   
+
+
+Next Steps: That's a great start! You've got the total set up.  To make sure you add up all those meal calories, you'll need to go through each one individually. How could you tell your program to repeat actions for each meal? 
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: I can give a message based of the amount of calories, like if the amount is over 2000 i will print something like "to many calories"
+LLM Response: As a developer, how would you best capture all the meal data from the user? Imagine, you ask 'How many calories in breakfast?', then 'How many in lunch?', and so on.  
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: What does the code look like?
+LLM Response: numberOfMeals = input()
+totalCalories = 0 
+
+
+Next Steps: Okay, so you have the number of meals and a starting point for the total calories.  To get calorie data for each meal, you'll need a way to repeat the process for every meal they ate. How do you think you could get all that calorie input in a single run? 
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [True], [False, False], [False], [False]]
+User Input: I would create a for loop inside the input and do a if that doesn't let values bellow 0
+LLM Response: That's a great idea! Let's talk about that `if` statement. What value inside the loop should we be checking to make sure the calories aren't negative?  Think about how you'd  test if a value is below zero. 
+
+
+
+Next Steps: "Excellent thinking about preventing negative calorie counts!  Now, to get those calorie numbers from the user, how would you actually  *ask* for them inside the loop?" 
+
+
+
+
+----------------------------------------------------------
+
+------------------------no_redirect------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[False, False], [False], [False, False], [False], [False]]
+User Input: What is the circunference of the Earth?
+LLM Response: Hmm, calculating the Earth's circumference uses different kinds of programming. Let's stick to our calorie tracker for now. Can you think of how to add up the calories from all the meals someone ate?  
+
+
+Next Steps: That's a great question!  Before calculating anything, we need to know how many meals we're dealing with. How would you ask the user about that? Think about what kind of answer we'd want to store to use later.  
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I ask the user the amount of meals eaten using input()
+LLM Response: That's a good start!  Now, think about how you'd store that number of meals in your program. What kind of data type makes sense for counting meals? 
+
+
+Next Steps: That's great! Now, think about where you'll store the total number of calories someone eats throughout the day. How would you set up a  place in your program to keep track of that running total?  
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I use a integer to store the value of the user input and use another integer to store the value of the total calories
+LLM Response: Remember variables are a way to store information in your program. 
+
+
+Next Steps: That's a smart move, storing the user's input!  Before we can add up those calories, we need a place to keep track of the total amount.  Think about how you'd give your program a container for all those calorie numbers.  What's a good way to set that up at the beginning?  
+
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I don't know what loops are can you explain them to me?
+LLM Response: Before we dive into loops, let's make sure we're on the same page about variables.  They're like boxes in your program where you store information. Think of it this way: you need a box to hold how many meals someone ate, and another box to keep track of the total calories. 
+
+
+
+
+Next Steps: "Great!  So we have a box for the number of meals.  Now, how do you think we'd start keeping track of all those calories added together?" 
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I would use a for loop with the number of meals
+LLM Response: That's a great idea using a for loop! It's perfect for going through each meal. Now, within that loop, how would you ask the user about the calories for each meal? 
+
+
+Next Steps: That's awesome! Loops are really handy for this.  Think about how you'd  keep track of the calories from each meal as you go through the loop.  What's a good way to make sure you're adding up all those numbers correctly?  
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I ask the user for input of the calories
+LLM Response: You're almost there! Imagine each meal's calories have their own little box. How would you name these boxes in your program to keep track of them?  
+
+
+
+Next Steps: That's a good start!  Imagine each meal's calories have their own little box. How would you name these boxes in your program to keep track of them?  Think about what information you'll be storing and a name that makes sense. 
+
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: I add up all of the calories into a total calories variable
+LLM Response: Excellent! So you're adding up those calories.  How would you use the `totalCalories` variable and `+=` to keep adding the calories from each meal? Remember, `totalCalories` is where we store the running sum of calories. 
+
+
+Next Steps: That's great! Now imagine you have a set of recipe cards, each with the calories for a different meal. You need a way to go through each card one by one and look at the calories. Think about how you'd instruct your program to review each meal's calorie information systematically.  
+
+
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: I can give a message based of the amount of calories, like if the amount is over 2000 i will print something like "to many calories"
+LLM Response: That's a great starting point for giving feedback!  How about we make this even more helpful by using a variable to store the calorie goal. That way, you can easily change the target based on individual needs.  Let's also brainstorm different messages you could use, depending on whether the calorie intake is below, at, or above the goal. 
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: What does the code look like?
+LLM Response: numberOfMeals = input()
+totalCalories = 0 
+
+
+Next Steps: Great start on setting up the variables! Now, how would you tell your program to go through each meal and collect its calorie information? Think about how you'd want to repeat the action of getting calorie input for every meal. 
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [True], [False, False], [False], [False]]
+User Input: I would create a for loop inside the input and do a if that doesn't let values bellow 0
+LLM Response: That's great!  `range()` helps your loop go through each meal. Think about how you'd use it to tell your program how many times to ask for calorie input, one for each meal. 
+
+
+Next Steps: That’s a good start on controlling the loop!  Now, think about what your program needs to do *inside* this loop for each meal.  How would you get the calorie information from the user for each individual meal and store it somewhere useful?      
+
+
+----------------------------------------------------------
+
+------------------------no_next_steps------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[False, False], [False], [False, False], [False], [False]]
+User Input: What is the circunference of the Earth?
+LLM Response: That's an interesting question about Earth's circumference!  But right now, let's focus on building our calorie tracker. Remember, we need to figure out how to get those meal calorie details from the user.  Think about what information you need for each meal.  What data point is essential at the start? 
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I ask the user the amount of meals eaten using input()
+LLM Response: To keep track of how many meals they ate, your program needs a way to store this information.  Think about what data type would be best for holding that number. Remember, when storing whole numbers like the number of meals, Python often uses a specific type of variable. Can you recall what that is? 
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I use a integer to store the value of the user input and use another integer to store the value of the total calories
+LLM Response: Great, using an integer is a perfect choice! Remember, `input()` lets us grab that number from the user. How would you use `input()` to store the number of meals the user entered? Think about how the information from `input()` can be saved as fuel for our program to work with – you'll need to give it a name!   
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I don't know what loops are can you explain them to me?
+LLM Response: Imagine you want to ask about each meal. A `for` loop is great for that!
+
+For example:  `for i in range(3):  print("What's the calorie count for meal", i+1, "?")` 
+
+Think about how you can adapt that to get calorie input and store it for each meal. 
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I would use a for loop with the number of meals
+LLM Response: That's a good start! To make your loop run the exact number of times the user ate, you need to use the number of meals they entered.  Remember,  `for i in range(num_meals):` will make the loop repeat based on the value stored in the `num_meals` variable. How can you plug in the  value the user gave you to control the number of times the loop repeats?  
+
+
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I ask the user for input of the calories
+LLM Response: Think about how you could ask the user for the calorie count for each meal.  
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: I add up all of the calories into a total calories variable
+LLM Response: That's a great plan! Now, think about how you would store each meal's calories and how a loop could help you add them up correctly.  Remember, inside the loop, you'll need a way to keep track of the running total.  Do you have a good idea for a variable to hold that?  
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: I can give a message based of the amount of calories, like if the amount is over 2000 i will print something like "to many calories"
+LLM Response: Remember, to give a meaningful message about their calorie intake, you'll need to keep track of the total calories as the loop goes through.  A good idea is to use a variable like `totalCalories` to add up the values.   Then, based on the value of `totalCalories`, you can give feedback about their daily intake. 
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: What does the code look like?
+LLM Response: ```python
+numberOfMeals = input()
+totalCalories = 0 
+```
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: I would create a for loop inside the input and do a if that doesn't let values bellow 0
+LLM Response: That's a great idea for making sure the calories are accurate!  For now, let's concentrate on building that loop. Think about how you'd ask for each meal's calories and how to add them up as you go.  
+
+
+----------------------------------------------------------------------------------no_CoT------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[False, False], [False], [False, False], [False], [False]]
+User Input: What is the circunference of the Earth?
+LLM Response: That's a pretty big number!  We're working on a program that tracks smaller numbers —  like the calories in your meals. 
+Want to start by figuring out how many meals you had today?
+
+
+Next Steps: That's a great start thinking about the size, but remember, we need to know how many meals to track!  Before we can add them up, wouldn't it be helpful to figure out how many meals we're dealing with?  
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I ask the user the amount of meals eaten using input()
+LLM Response: "That's a good start! How about something like 'How many meals did you have today?'  Think about how that number will help us ask about the calories for each meal." 
+
+
+
+
+Next Steps: Great! Now that you know how many meals were eaten, you'll need a way to keep track of the total calories.  Before you can add up all the meal calories, how would you set up a place to store that total? 
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I use a integer to store the value of the user input and use another integer to store the value of the total calories
+LLM Response: Great! Think of variables like containers that hold information.  `number_of_meals` could store how many meals the user ate. 
+
+Remember, when you get input from the user, it's stored as text. To use it in calculations, you need to turn it into a number. Python has a function called `int()` that can do that.   
+
+Once you have `number_of_meals` stored as a number, how will you use that to figure out how many times to ask about calorie input? 
+
+
+
+Next Steps: That's a great start for getting the number of meals! Now, think about how many times you'll need to ask for calorie input.  How can you use the `number_of_meals`  to ensure you add up the calories from each meal correctly? 
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I don't know what loops are can you explain them to me?
+LLM Response: That's a great question!  Loops are helpful for repeating something, like asking about each meal's calories.  
+
+Think of it this way: instead of writing separate lines of code for every meal, a loop lets you ask for the calorie input once, and then it automatically does it for all the meals. 
+
+
+Let's focus on the number of meals you had today first. Think about how knowing that number will help us with the loop later on.   
+
+
+Next Steps: That's a clever way to think about it! Before you start asking about calories, wouldn't it be helpful to have a place to store the total amount as you go? 
+
+Think of it like a shopping basket – you'd add each item's price to the basket total as you go. How would you prepare your program to keep track of that running total?  
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I would use a for loop with the number of meals
+LLM Response: ```python
+for i in range(number_of_meals):
+  # This is where you'll ask for the calories for meal i 
+```
+Think of `i` as representing the current meal number. So, the first time through the loop, `i` will be 0, the next time it will be 1, and so on. 
+
+
+Next Steps: That's a great start to setting up the loop!  Now, think about where you'll keep track of the total calories as you go through each meal.  How would you make sure to add up each meal's calories correctly?  
+
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I ask the user for input of the calories
+LLM Response: Remember, in our previous steps, we talked about collecting integers. 
+  You need a place to store the running total of calories.  How would you name a variable to hold this sum?  Think of it like a piggybank where you drop each meal's coins.
+
+
+
+
+
+
+
+Next Steps: That's a good start to thinking about where to put the calorie counts. Now, imagine you have a piggy bank to collect all the coins – each representing a meal's calories.  How would you name the piggy bank so you know it holds the total calories? 
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: I add up all of the calories into a total calories variable
+LLM Response: Great! Think about how Python updates the variable. You use the `+=` operator.  This means you take the current value in `total_calories`, add the new calorie input, and store the result back in `total_calories`. 
+
+
+Next Steps: Okay, so now you have a great way to keep track of a meal's calories. Imagine you're going through each meal one by one.    How would your program make sure to ask for the calories from each meal and add them to your running total? 
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: I can give a message based of the amount of calories, like if the amount is over 2000 i will print something like "to many calories"
+LLM Response: Great idea about giving feedback! Think about how you'd compare the total calories to 2000. How would Python use symbols like `>` or `<` to check if the total is over 2000? 
+
+
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: What does the code look like?
+LLM Response: ```python
+numberOfMeals = input()
+totalCalories = 0 
+```
+
+Next Steps: That's a good start on setting up your variables!  Now, imagine you want to go through each of those meals one by one.  How could you write code that repeatedly asks for calorie information for each meal? 
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [True], [False, False], [False], [False]]
+User Input: I would create a for loop inside the input and do a if that doesn't let values bellow 0
+LLM Response: Great!  Think of using `number_of_meals` like telling the loop how many times to add a calorie to your running total, just like we talked about with filling that piggy bank.  Something like this:
+
+ ```python
+  for i in range(number_of_meals):
+    calorie_input = int(input("Enter calories for meal {}: ".format(i+1)))
+    totalCalories += calorie_input
+ ```
+
+
+
+
+Next Steps: That's a great start to setting up a loop! Now, think about what happens inside that loop. You want to get the calorie information for each meal, right? How would you prompt the user for that calorie number?  
+
+
+
+
+----------------------------------------------------------
+
+------------------------no_self_refine------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[False, False], [False], [False, False], [False], [False]]
+User Input: What is the circunference of the Earth?
+LLM Response: That's an interesting question! However, for now, let's focus on our calorie tracker.  Remember, we're building a program to help someone keep track of how many calories they eat each day. Can you think about what information we need to collect first to make that happen?  
+
+
+Next Steps: That's a big question! It's awesome you're thinking about the world around us.  To get started with our calorie tracker, let's focus on what a person eating sees. Remember, we want to know how many meals they had. How could we get that information from them in our program? 
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I ask the user the amount of meals eaten using input()
+LLM Response: "Asking the user directly is perfect!   Something like  'How many meals did you have today?' would work well. Make sure you tell them clearly what kind of answer you're looking for, like a whole number."  
+
+
+Next Steps: That's a great first step! To keep track of all the meals' calories, you'll need a place to store the running total, don't you think?  What would you call a place holder for that total amount of calories? 
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: I use a integer to store the value of the user input and use another integer to store the value of the total calories
+LLM Response: "That's excellent thinking! Using variables is just what we need to keep track of those values as we go.  
+
+Now, imagine you're ready to get the user's input. What kind of prompt would you use to ask them how many meals they had today?  Remember,  clearly communicating what you expect back is important in programming.  
+" 
+
+
+Next Steps: That's excellent!  Think about how to tell your program how many times to ask for a meal's calories. Would you set a specific number, like "3" for example, or find a way to ask the user how many meals they ate? 
+
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: I don't know what loops are can you explain them to me?
+LLM Response: "It seems like we've strayed a bit from our calorie tracker. Remember, our goal is to help someone keep track of what they eat during the day. To do that, we need a way to ask for information about each meal they had. Loops are helpful for things like that, but for now, let's focus on how we'd get the total number of meals someone ate." 
+
+
+
+
+Next Steps: "That's a good start! It makes sense to know how many meals someone ate before asking for calorie details. Think about how you'd ask for each meal's calorie information. Would you need a different question for each meal, or can you use something that works for all of them? "  
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [True], [False, False], [False], [False]]
+User Input: I would use a for loop with the number of meals
+LLM Response: Here are three distinct responses, each with independent reasoning:
+
+**Response 1:**
+
+"That's a good idea!  For each meal, you'll want to ask for its calorie count. How can you make sure your loop asks for an input for every meal the user specified?"
+
+**Response 2:**
+
+"Excellent! A `for` loop will definitely help you handle each meal. To work with that loop, remember you'll need to know how to ask for the calorie input for *each* meal.  Have you thought about how to do that?"
+
+**Response 3:** 
+
+"Nice! A `for` loop is perfect.  Think about what information you'd ask the user for *inside* the loop, for each meal."
+
+## Analysis & Selection
+
+**Comparison:**
+
+All three responses acknowledge the user's choice to use a `for` loop and guide them towards how to implement it effectively.
+
+* **Response 1 & 2:** Phrased in a slightly more direct way, guiding the user towards thinking about the code within the loop.
+
+* **Response 3:** More subtle, encouraging the user to think about what needs to happen "inside" the loop.
+
+**Best Response:**
+
+Response 3 is the most effective:
+
+* **Subtle Hint:** "What information you'd ask... inside the loop" is a subtle hint without directly stating the solution.
+* **Immersive:**  It maintains the conversational flow and persona of the instructor.   
+* **Pedagogical Value:** Encourages the user to think critically about the loop's purpose and how to structure the code correctly.
+
+
+
+
+
+Next Steps: That's great! Now that you're looping through each meal, how will you make sure to add up the calories from every meal?  Think about what you need to do with the calorie input for each meal before you move on to the next one. 
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [True], [True, False], [False], [False]]
+User Input: I ask the user for input of the calories
+LLM Response: ## Refined Response:
+
+"That's smart!  To keep things neat and accurate, you'll need a special place to store the calorie amounts for each meal. Think about where in your program you could add up all those calories as you go."
+
+
+
+### Reasoning:
+
+This response focuses on the "where" of storing calories and implies the "how" (adding them up) without directly stating the solution.  It maintains the supportive, patient instructor persona and stays aligned with the scenario's learning goals. 
+
+* **Subtle hint:** "special place" guides towards variables without explicitly naming them.
+* **Actionable step:** "adding up all those calories as you go" encourages thinking about accumulation within the loop. 
+* **Role consistency:** The response mirrors the earlier conversation about storing and manipulating input. 
+
+
+
+
+
+Next Steps: That's a great start! Remember, you're building a  "Daily Calorie Tracker". You want to see the total number represented and maybe give a helpful message about it at the end.  Think about where in your program you'd pull out all the calculated information.  
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [True], [True, True], [False], [False]]
+User Input: I add up all of the calories into a total calories variable
+LLM Response: Here are three distinct responses, each with independent reasoning:
+
+**Response 1:**
+
+"Excellent! It's like putting all the puzzle pieces together. Now, imagine the user sees their total calorie count at the end. How would you display that number for them in a clear and understandable way?"
+
+**Response 2:**
+
+"That's a crucial step!  You've got the calories now, but remember, you're building a tracker for someone else. How would you show them what they've put in today?"
+
+**Response 3:**
+
+"We're almost there! Think about the final screen a user would see when they finish. How would you present their total calorie count and maybe even offer some feedback based on that number?"
+
+
+
+## Analysis & Selection
+
+All three responses acknowledge the user's progress and focus on the output stage. They use varied language to guide the user towards thinking about user interface and feedback.
+
+**Response 3 is the most effective:**
+
+* **Contextual Relevance:** It directly connects to the "Daily Calorie Tracker" scenario without being overly prescriptive. 
+* **Clear Progression:** It pushes the user towards the user experience by mentioning "final screen" and "feedback." 
+* **Conversational:** The language feels natural and maintains the instructor persona. 
+
+
+
+**Refined Response:**
+
+"That's a great start! Now let's think about how to present all that information to someone. Imagine the user finishing their tracker. How would you display their total calorie count in a clear and helpful way?"
+
+
+
+Next Steps: "Excellent!  Now think about how you'd give the user some feedback based on their total calorie count.  Maybe there are different messages depending on whether they had a light, moderate, or high intake.  How would you tailor those messages to make the experience more helpful?" 
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [True], [True, True], [True], [False]]
+User Input: I can give a message based of the amount of calories, like if the amount is over 2000 i will print something like "to many calories"
+LLM Response: ## Refined Respones 
+
+"That's a great start! It's helpful to give the user some guidance based on their calorie intake. Have you thought about what kinds of messages might be encouraging or helpful depending on how many calories they've eaten?" 
+
+
+
+
+This response:
+
+* **Acknowledges the action:** Positively validates the user's idea.
+* **Offers a subtle hint:**  Questions the type of messages without giving direct examples, encouraging the user to think about different scenarios and appropriate feedback.
+* **Maintains role consistency:** Continues the supportive and guiding tone of a patient instructor.
+
+
+
+
+Let me know if you'd like to explore more variations! 
+
+
+Next Steps: That's good thinking about calorie limits! To make sure everything works smoothly, think about how you'd make sure the user enters valid calorie numbers.  For example,  what if they accidentally type in a negative number? How could you handle that? 
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [True], [True, True], [True], [False]]
+User Input: What does the code look like?
+LLM Response: ```python
+numberOfMeals = input()
+totalCalories = 0
+for i in range(numberOfMeals):
+    mealCalories = input()
+    totalCalories += mealCalories
+if totalCalories < 2000:
+    print('Great job! You stayed under the recommended daily calories.')
+elif totalCalories < 2500:
+    print('Good job! You are close to the recommended daily calories.')
+else:
+    print('You might want to watch your calorie intake.')  
+```
+
+Next Steps: "That's a solid start!  You've clearly got the structure down for tracking calorie intake. Now, think about situations where a user might accidentally input something unexpected. How can you make your program handle those situations gracefully?"  
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [True], [True, True], [True], [True]]
+User Input: I would create a for loop inside the input and do a if that doesn't let values bellow 0
+LLM Response: End
+
+----------------------------------------------------------
+
+------------------------more_refine------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[False, False], [False], [False, False], [False], [False]]
+User Input: What is the circunference of the Earth?
+LLM Response: That's a fascinating question!  Right now, we're focusing on building a calorie tracker. It helps us understand how to get that meal information from the user.  Let's think about how we'd figure out how many calories someone ate today. Think about how you'd get that number from someone.  
+
+
+Next Steps: That's a great question!  To figure out someone's total calorie intake, we need to know how many meals they ate. How would you ask someone how many meals they had today, and how could we save that information so our program can use it? 
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I ask the user the amount of meals eaten using input()
+LLM Response: What kind of information does this number represent? How could we name a variable to store it clearly? Storing this number will help our program know how many times to ask for calorie input for each meal. 
+
+
+
+
+Next Steps: That's great! Now you have the number of meals. Imagine you're keeping a running total of all the calories. What would you need a variable to keep track of that total?  Think about what that variable would be used for. 
+
+
+
+
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: I use a integer to store the value of the user input and use another integer to store the value of the total calories
+LLM Response: Great! These names make sense. "num_meals" will store how many meals the user tells us about. What should `total_calories` be keeping track of as our program runs? 
+
+
+
+Now that we have those names, let's think about how  to get the calorie information for each meal from the user. How do you imagine getting that for each meal?
+
+
+Next Steps: Great!  Now that we have  `total_calories`, think about how we can get calorie information for each of those meals the user entered. How could we get that calorie data for every single meal they had?  
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: I don't know what loops are can you explain them to me?
+LLM Response: Imagine a loop that asks for the calories of each meal, one meal at a time.  It would keep asking until it's collected data for all the meals the user mentioned. Remember, we're building a program to track daily calories. Loops can help us efficiently get input for each meal. Let's think about how to start writing that loop. What kind of starting point would make sense? 
+
+
+
+Next Steps: Okay, so you have the number of meals stored.  How could you make your program repeat the process of asking for calorie information for each meal? Think about how many times you need to ask for calorie input based on the number of meals the user told us about.  
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [True], [False, False], [False], [False]]
+User Input: I would use a for loop with the number of meals
+LLM Response: That's a great start!  Using a  `for` loop is smart. Now, think about how to tell your `for` loop exactly how many times to repeat. It needs to know how many meals the user had. Could you use  `num_meals`  for that? 
+
+
+
+
+
+
+
+
+Next Steps: That's a really good idea!  A `for` loop will let you repeat that process for each meal.  
+
+Inside that loop, you'll need to figure out how to  ask the user for the calorie information for each meal.  How would you collect that calorie data so you can keep track of it? 
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [True], [True, False], [False], [False]]
+User Input: I ask the user for input of the calories
+LLM Response: "Enter the calorie count for meal [index+1]:"  	
+
+Remember, you're building a calorie tracker. How would you phrase the prompt to make it clear to the user which meal's calories you want to know? 
+
+
+
+
+
+Next Steps: That's a good start! You're getting closer to asking for meal-specific calorie information.  Remember, our goal is to collect calories for each meal separately. How can you make sure the user knows which meal's calories you're asking for? 
+
+
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [True], [True, True], [False], [False]]
+User Input: I add up all of the calories into a total calories variable
+LLM Response: You're building your calorie tracker, so  `total_calories` needs to keep getting bigger with each meal. How would you add the calories from the current meal you're asking the user about to your running total?  
+
+
+Next Steps: Great! You're adding up those calories, which is perfect for tracking our total intake. Now that you have the total, what would you like to do with that information? How can you use it to give the user a helpful message about their calorie consumption? 
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [True], [True, True], [True], [False]]
+User Input: I can give a message based of the amount of calories, like if the amount is over 2000 i will print something like "to many calories"
+LLM Response: "You're on the right track! Think about different messages for a 2000 calorie day compared to a 3000 calorie day. What would make each message feel personalized and helpful? Let's brainstorm some fun and encouraging phrases!"  
+
+
+
+Next Steps: That's a good start! You're thinking about different messages for different calorie levels.  
+
+What if a user accidentally enters a negative number for calories?  How could your program handle that situation to make sure everything works correctly?  
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [True], [True, True], [True], [False]]
+User Input: What does the code look like?
+LLM Response: ```python
+numberOfMeals = input()
+totalCalories = 0
+for i in range(numberOfMeals):
+    mealCalories = input()
+    totalCalories += mealCalories
+if totalCalories < 2000:
+    print('Great job! You stayed under the recommended daily calories.')
+elif totalCalories < 2500:
+    print('Good job! You are close to the recommended daily calories.')
+else:
+    print('You might want to watch your calorie intake.')
+```
+
+Next Steps: That's a solid start! Your code tracks calories well.  Now, think about how to make sure the user enters numbers that make sense for calories. What if they accidentally type in a negative number for a meal?  How could your program handle that? 
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [True], [True, True], [True], [True]]
+User Input: I would create a for loop inside the input and do a if that doesn't let values bellow 0
+LLM Response: End
+
+----------------------------------------------------------
+
+------------------------no_self_consistency------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[False, False], [False], [False, False], [False], [False]]
+User Input: What is the circunference of the Earth?
+LLM Response: That's an interesting question! The Earth's circumference is pretty huge!  For our calorie tracker, we're focusing on a different kind of measurement—the number of calories in your meals. How many meals did you have today? 🤔 
+
+
+Next Steps: That's a great question about the Earth! It definitely takes a lot to circle around it. 🌎  Remember, we're aiming to track your calorie intake for today.  To do that, we first need to know how many meals you had. 🤔  Think about how you'd get that information from the user and store it for later. 
+
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I ask the user the amount of meals eaten using input()
+LLM Response: Okay, great! Now that you know how many meals they had, you need to figure out how many calories they ate at each one. How would you  ask the user for that information and store it so you can keep track? Think about how you could get each individual meal's calorie input from the user.  
+
+
+Next Steps: You're doing a great job of getting the meal count!  Now, remember, to calculate the total calories, you'll need a way to store that running sum as we go through each meal. How would you set up a variable to keep track of the total calories eaten so far?   
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I use a integer to store the value of the user input and use another integer to store the value of the total calories
+LLM Response: "You're on the right track!  To remember how many meals someone had, we use variables – like little containers in our program. Imagine asking a friend, 'How many meals did you have?', and they say, 'Three!'. How would you store that information so your program remembers?" 
+
+
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I don't know what loops are can you explain them to me?
+LLM Response: "  Loops are like shortcuts for repeating instructions in your program. Imagine you want to ask for the calories of each meal several times – a loop can do that for you automatically!  It's like saying, 'Keep asking for the calories until you've gotten them all!'" 
+
+
+
+
+Next Steps: That's a good starting point with loops! Before you start factoring in calories, think about how you'd set up a container to hold the sum of all your meals. What would you use to keep track of the total calories eaten throughout the day?  How could you remember that total as you add more calories from each meal?  
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I would use a for loop with the number of meals
+LLM Response: Great!  A for loop is perfect for this. Remember, the loop will run once for each meal, so in each run, you'll need to get the calories for that meal from the user and add them to your `totalCalories`.  How would you combine those two steps within the loop?  
+
+
+
+
+Next Steps: That's a good start using a loop! To keep track of the total calories as you go,  you'll need a place to store that running sum. How would you set up a variable to hold the total calories eaten so far?  
+
+
+Next Steps: Think about how you'd set up a variable to remember the calorie count as you go through each meal.  
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, False], [False], [False, False], [False], [False]]
+User Input: I ask the user for input of the calories
+LLM Response: Think about what you'd print inside that loop for each meal's calorie. Remember, you need a place to store the calorie count for each meal. What would you name this variable?  
+
+
+Next Steps: That's a great start! Now,  think about how you'll keep track of the total calories as you go through each meal.  Before you can summarize them, you'll need a place to store the running sum. What would you call this special container that holds all those calories? 
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: I add up all of the calories into a total calories variable
+LLM Response: What name would be meaningful for this special box that holds all the calories so far? Remember, each meal adds to the total. How would you change the contents of your `totalCalories` box after each meal? Think about how this box needs to be updated every time you go through the loop for a new meal. 
+
+
+Next Steps: "That's a great start on remembering the calories! Now think about how you'll actually add those calories together as the program goes through each meal. How do you tell your program to repeatedly get calorie input and combine it into a single total?"  
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: I can give a message based of the amount of calories, like if the amount is over 2000 i will print something like "to many calories"
+LLM Response: That's a fantastic way to make the calorie tracker more personal!  Before we can compare your total to your goal, though,  we need to figure out how to add up all the calories from each meal.  Think about how you might combine those individual calorie amounts to get the running total.  
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: What does the code look like?
+LLM Response: numberOfMeals = input()
+totalCalories = 0 
+
+
+Next Steps: Okay, you've set up your variables nicely!  To make sure you get calorie input for each meal, you'll need a way to repeat those input questions. How would you tell your program to go through each meal, one by one, and collect its calorie data? 
+
+
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [True], [False, False], [False], [False]]
+User Input: I would create a for loop inside the input and do a if that doesn't let values bellow 0
+LLM Response: Think about how you'd check each calorie input to make sure it's a positive number before adding it to the total. An 'if' statement could be helpful for that! Remember, your loop goes through each meal one by one.  
+
+
+
+
+
+Next Steps: That's a smart idea about checking for valid input!  Now, how about thinking about how your program will actually take the calorie input for each meal? Remember, you want to read in that number and use it to update your total calories.  
+
+
+Next Steps: How do you store each meal's calories in a way that you can add them up later?  
+
+
+----------------------------------------------------------
+
+------------------------custom_llm_setup------------------------
+
+---------------------------------------------------------
+
+stage_correct_response_check: [[False, False], [False], [False, False], [False], [False]]
+User Input: What is the circunference of the Earth?
+LLM Response: That's a fascinating fact about our planet!  Let's bring our focus back to the calorie tracker.  What information would be helpful for us to figure out how many calories someone eats each day? 
+
+
+Next Steps: That's a great question to ask about our planet!  But, let's  bring our focus back to the calorie tracker. Before we can calculate daily calorie intake,  wouldn't it be helpful to know how many meals were eaten? How could you find that out from the user? 
+
+
+----------------------------------------------------------
+
+---------------------------------------------------------
+
+stage_correct_response_check: [[False, True], [False], [False, False], [False], [False]]
+User Input: I ask the user the amount of meals eaten using input()
+LLM Response: Imagine a container in your code called 'numberOfMeals' where we can put the user's input. How would we put the number of meals into that container?  
+
+
+Next Steps: That's a great start! Now, imagine that container needs a label so you know what's inside.  How would you give that container a name that makes sense for the number of meals someone ate today?  
+
+
+
+----------------------------------------------------------
+
+---------------------------------------------------------
+
+stage_correct_response_check: [[False, True], [False], [False, False], [False], [False]]
+User Input: I use a integer to store the value of the user input and use another integer to store the value of the total calories
+LLM Response: That's great thinking about using integers! Now, imagine you're talking to a user. How would you ask them to type in the number of meals they ate?   Let's say a user tells you they had 3 meals. How would you make sure your program remembers that number? 
+
+
+
+Next Steps: That's a great start thinking about storing numbers!  
+
+Think about how you'd actually get that number from the user. How would you ask them what they ate, and how would you make sure your program remembers their answer?  
+
+
+
+----------------------------------------------------------
+
+---------------------------------------------------------
+
+stage_correct_response_check: [[False, True], [False], [False, False], [False], [False]]
+User Input: I don't know what loops are can you explain them to me?
+LLM Response: Loops are helpful when you need to repeat a set of instructions multiple times. Think about how you'd ask for calorie input for each meal—wouldn't it be easier to have your code ask that same question for every meal instead of writing it out individually?  
+
+
+Next Steps: That's smart to think about how to repeat steps! Now think about how you'd start gathering this meal information. Would you directly ask the user for all the calories at once, or would you ask about each meal individually?   
+
+ 
+
+
+----------------------------------------------------------
+
+---------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: I would use a for loop with the number of meals
+LLM Response: Think about how many times you'll ask for calorie input – wouldn't that be the same number of times your loop runs? 
+
+
+
+
+Next Steps: That's a great start!  Remember, you need to go through each meal individually to collect the calorie information. How could you make your program ask for input for each meal without rewriting the same question  over and over?  
+
+
+
+
+----------------------------------------------------------
+
+---------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: I ask the user for input of the calories
+LLM Response: That's a good start, but remember, we're building a program that tracks each meal separately.  Could you use a way to repeat the same question for every meal without having to write it out several times?   
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------
+
+---------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: I add up all of the calories into a total calories variable
+LLM Response: Imagine your program has little containers for each meal's calories.
+
+Think about how you'd label each container and place the calorie values inside them. 
+
+
+----------------------------------------------------------
+
+---------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: I can give a message based of the amount of calories, like if the amount is over 2000 i will print something like "to many calories"
+LLM Response: Imagine each meal has its own container for calories.  Before you can add up all the calories,  you need a place to store the calories for each meal individually. How could you set up your program to do that?  
+
+
+----------------------------------------------------------
+
+---------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [False], [False, False], [False], [False]]
+User Input: What does the code look like?
+LLM Response: numberOfMeals = input()
+totalCalories = 0  
+
+
+Next Steps: That's a good start! Now, think about how you'd actually get the calorie information for each meal.  You'll need a way to repeat the question "How many calories did you have?"  a certain number of times. How could you use a loop to make your program do that efficiently?  
+
+
+----------------------------------------------------------
+
+---------------------------------------------------------
+
+stage_correct_response_check: [[True, True], [True], [False, False], [False], [False]]
+User Input: I would create a for loop inside the input and do a if that doesn't let values bellow 0
+LLM Response: Think about how you'd ask for each meal's calories right before you add the total. It's great that you're thinking about making your program handle those tricky edge cases. Remember,  validating input is really important! 
+
+
+Next Steps: "Great start on making sure your calorie counts are accurate!  Before you can add up those calories from each meal, you need to collect them. How would you get the calorie input for each individual meal  within the loop?" 
+
+
+----------------------------------------------------------
+

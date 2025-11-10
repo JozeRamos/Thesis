@@ -1,0 +1,69 @@
+Completed: 7:50
+
+Choose a scenario:
+
+    Calory Tracker
+    Bug Hunt
+    Ride Sharing
+    Medicine
+
+1
+
+Calory Tracker scenario selected.
+
+Here is the scenario description:
+
+You're building a calorie tracker. It should ask how many meals were eaten, take calorie inputs, then give feedback based on total calories. What's the first part you'll implement?
+
+For this scenario you don't need to write code, you can just state what you would do to complete the task.
+
+i should start by prompting the user about how many meals were eaten
+
+Now that we know how many meals were eaten, how can we store that information to use later in our calorie tracker? Remember to use the input() function to get user input and store it in a variable.
+
+Next Steps: You're thinking ahead! You've got the meal count stored, now let's think about where we'll store the total calories. Since we'll be adding up calories for each meal, we'll need a variable to hold that sum. What type of variable would be best suited for storing a running total?
+
+ok our variable for the total calories for the day should initialized as 0
+
+Let's focus on initializing the total calories variable. You're correct that it should start at 0. This ensures that our tracker begins with a clean slate. Now, think about the data type for this variable. Should it be an integer or a floating-point number? Consider the type of value you'll be storing in it.
+
+Next Steps: "Excellent job initializing the total calories variable! Now, let's think about how we can ask for calorie input in a way that's efficient and easy to manage. Instead of asking for each meal's calories individually, how can we use a loop to streamline this process and make our code more scalable?"
+
+now that we have a variable for the total number of calories initialized as zero and also a variable for the number of meals, we can iterate over the number of meals and in each iteration ask the user to input the number of calories for that meal that we then will increment the total with the user's input
+
+Great job outlining the steps to efficiently collect meal calorie data! You're correct that we can iterate over the number of meals and ask for calorie input in each iteration. To add the user's input to the total calories, you'll want to use the += operator. This will ensure that the total calories variable is updated correctly. Now, think about how you'll handle invalid input, such as negative numbers or non-numeric values.
+
+Next Steps: You're thinking about collecting input for each meal's calories! To ensure you get accurate data, how will you validate the user's input to make sure it's a positive numeric value?
+
+we will check if the value is greater than zero
+
+You were on the right track thinking about validating input! To ensure you get a positive numeric value, consider using a conditional statement to check if the input is greater than zero. You could use a while loop to keep asking for input until the user provides a valid number. This way, you can guarantee that your total calories calculation will be accurate.
+
+while the value is not greater than zero, keep prompting the user for a value for that meal's calories
+
+Great thinking! The loop's terminating condition should be when the input value is greater than zero. This means the loop will continue to prompt the user for input until they enter a valid number. You can use a conditional statement like while input_value <= 0: to keep the loop running until the input is valid. Don't forget to update the total calories variable inside the loop by adding the valid input to it. Also, consider using a try-except block to catch non-numeric values in the user's input. Next, think about how you'll display the total calories and provide a health message based on the user's daily intake.
+
+Next Steps: It looks like you're thinking about adding each meal's calories to the totalCalories variable. Now, consider how you can accumulate the total calories correctly. Think about the operation you need to perform on the totalCalories variable each time you add a new meal's calories.
+
+we should increment the totalCalories variable each time
+
+Exactly! To display the final total calories and provide a health message, think about conditional logic and message structure. How will you categorize the user's daily intake as under, optimal, or excessive? Consider the range of total calories that defines each category.
+
+Next Steps: You're thinking about categorizing the user's daily intake! That's a great start. Now, consider the specific calorie ranges that define each category. How can you use conditional logic to check if the total calories fall within a certain range, and then provide a corresponding health message?
+
+ok so we should have a calorie max variable and a calorie min variable. this should be compared witht the totalCalories
+
+Now, let's refine those calorie ranges! You've established calorieMin and calorieMax variables. How might you structure your conditional logic to categorize the user's daily intake? Think about the different cases: under, optimal, and excessive. What conditions would trigger each health message?
+
+Next Steps: You're setting up the boundaries for categorizing the user's daily intake! Now, think about how you can use those calorieMin and calorieMax variables to create a conditional logic structure. How would you use if, elif, and else statements to trigger the corresponding health messages? Consider the specific conditions that would define each category.
+
+if calorieMin ≤ totalCalories ≤ calorieMax
+
+Congratulations you completed the scenario.
+
+Choose a new scenario:
+
+    Calory Tracker
+    Bug Hunt
+    Ride Sharing
+    Medicine

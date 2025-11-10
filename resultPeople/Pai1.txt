@@ -1,0 +1,45 @@
+Choose a scenario:
+
+Calory Tracker
+Bug Hunt
+Ride Sharing
+Medicine
+1
+
+Calory Tracker scenario selected.
+
+Here is the scenario description:
+
+You're building a calorie tracker. It should ask how many meals were eaten, take calorie inputs, then give feedback based on total calories. What's the first part you'll implement?
+
+For this scenario you don't need to write code, you can just state what you would do to complete the task.
+
+create variable to meals
+
+Let's think about how we can use that variable to store the number of meals. Now that we have a variable for meals, how can we ask the user how many meals they had today to fill that variable?
+
+Next Steps: I see you're thinking ahead by creating a variable for meals! Now, let's think about how we can prepare to store the total calories consumed. We'll need a way to accumulate the calorie values from each meal. What type of variable would be suitable for holding this total value, and how can we initialize it to ensure we're starting from a clean slate?
+
+initianilize zero
+
+Great job initializing the total to zero! Now, think about how this total variable can accumulate calorie values from each meal. How can you use this variable to add up the calories inside the loop?
+
+Next Steps: I see you've initialized the total to zero! That's a great start. Now, think about how we can use this loop to get all the calorie inputs in a single run. How can we structure the loop so that it repeats the process of asking for calorie input for each meal? Consider what kind of loop would be best suited for this task.
+
+ask for calorie input
+
+How can we use the meal count to control the number of iterations in the loop? Consider using a for loop with a range based on the meal count, so we can repeatedly ask for calorie input for each meal.
+
+Next Steps: You're planning to ask for calorie input! Now, think about how you can use the input() function to collect calorie data for each meal. What would be a clear and concise prompt to ask the user for the calories of each meal?
+
+ask the user - how many calories have the meal
+
+You wanted to ask the user how many calories each meal has, which is a great step! Since we have the meal count, let's structure the loop to repeat the process of asking for calorie input for each meal. Consider using a for loop with a range based on the meal count, like for i in range(meals):. Then, inside the loop, you can ask the user for the calories of each meal with a clear and concise prompt, such as "Enter the calories for meal {}:".
+
+yes use the loop
+
+Now that we're using a loop, let's think about how to structure it. We can use a for loop with a range based on the meal count, like for i in range(meals):. Then, inside the loop, we can ask the user for the calories of each meal with a prompt like Enter the calories for meal {}:. We can use the input() function to collect calorie data for each meal, like calories = int(input('Enter the calories for meal {}: '.format(i+1))). This will allow us to repeatedly ask for calorie input for each meal.
+
+ok
+
+Let's focus on the loop structure. Since we have the meal count, a for loop with a range based on the meal count can work well. How can we use this loop to accumulate the total calories from each meal? Think about where we can add the calorie input to the total inside the loop

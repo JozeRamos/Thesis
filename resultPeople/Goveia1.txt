@@ -1,0 +1,66 @@
+Choose a scenario:
+
+Calory Tracker
+Bug Hunt
+Ride Sharing
+Medicine
+1
+
+Now that we have the meal count, let's think about how we'll keep track of the daily calorie intake. We need a way to store the total calories consumed. What kind of variable would be best suited for this task, and how would you initialize it?
+
+Next Steps: I see you're thinking about the task! For storing the total calories, we need a variable that can hold a numerical value. Think about what type of variable would be best suited for this task. Are you leaning towards an integer or a float? Maybe there's a specific reason why one might be more suitable than the other?
+
+float variable for a more precise number. I can start with calories = 0.0 for example
+
+How can you use the number of meals to iterate through and collect calorie inputs? Think about what type of loop would be suitable for this task. You want to ask the user for calorie input for each meal, so how can you structure the loop to achieve this?
+
+Next Steps: Great thinking on using a float variable for a more precise number! Now, let's focus on structuring the loop to ask for calorie input for each meal. Since we have the number of meals, how can you use this to determine how many times the loop should run? Think about what type of loop would allow you to repeat the calorie input process for each meal.
+
+Use a for loop to iterate through the meals
+
+Great thinking on using a for loop! Now, let's make sure we're using the meal count effectively. Think about a loop that can repeat a task a specific number of times, based on the meal count. Is there a type of loop that's well-suited for this task, one that uses a counter to keep track of the iterations?
+
+a for loop
+
+Great choice on using a for loop! Now, think about how you can connect the meal count to the loop's iterations. How can you use the meal count to set the loop's range, ensuring we ask for calories the right number of times? What syntax might you use to make this connection?
+
+
+What do i do?
+
+
+Let's break down the loop structure together! I see you're unsure about how to proceed. Think about using a for loop with a range based on the meal count. For example, for _ in range(meal_count): would allow us to ask for calorie input the correct number of times. What if we initialized a variable i to keep track of the current meal number, and then used range(meal_count) to repeat the calorie input process?
+
+Next Steps: Let's break down the loop structure together! I see you're on the right track with the for loop. Now, think about how you can use the range(meal_count) to connect the meal count to the loop's iterations. What if you used meal_count as the upper limit for the range, so the loop runs the correct number of times?
+
+What code do I have?
+
+
+Let's review your current code: you've set up a for loop to iterate through each meal based on the meal count. Now, let's focus on collecting the calorie data. How can you use input() to ask the user for calorie input, and then store that value in a variable to add to the total calories later? Think about crafting a clear prompt to guide the user's input, and consider how you'll handle the input value once it's been collected.
+
+Next Steps: Let's break it down. You're inside the for loop, which will run the correct number of times based on the meal count. Now, think about crafting a clear prompt to ask the user for calorie input for each meal. How can you use input() to get the calorie data, and what kind of prompt would make sense to guide the user's input?
+
+What does the code look like?
+
+
+No code has been provided yet.
+
+Next Steps: Let's revisit the task at hand. You're creating a daily calorie tracker, and you've decided to use a for loop to iterate through each meal. Now, think about what you need to do inside the loop. You need to ask the user for calorie input for each meal. How can you use input() to ask the user for calorie data, and what kind of prompt would make sense to guide the user's input?
+
+
+I would use the following prompt: f"What calories did you consume for meal {x} of the day" where x is a variable that tracks the for loop iterations
+
+Great job on crafting a clear prompt! Now, think about how you can use input() to store the calorie data in a variable. What kind of variable would make sense to hold this data, and how would you convert the input to an integer?
+
+Next Steps: Excellent thinking on crafting a clear prompt! Now, let's focus on storing the calorie data. Since you'll be collecting calorie input multiple times, how about using a single variable to hold the total calories? How would you update this variable inside the loop to add each meal's calories?
+
+
+Start the calorie counter at zero and increment it with every input
+
+To accumulate the calories, consider using the += operator to add each meal's calories to the total. Specifically, use total_calories += int(input(calorie_prompt)) to update the total calorie variable inside the loop. Remember to convert the input to an integer before performing the addition, ensuring the total calories are calculated correctly.
+
+Next Steps: It looks like you're making great progress on accumulating the calories! Now that you're updating the total calories inside the loop, think about how you can ensure that the input is a valid integer value. What if the user enters something that can't be converted to an integer? How could you add a safeguard to handle such a scenario?
+
+
+Use if else conditions to check inputs type and ask for the input again if it doesn't match
+
+I love how you're thinking creatively about input validation! Let's try using a try-except block to handle potential errors when converting the input to an integer. This way, we can ensure that only valid numbers are added to the total. For example, we can use try: total_calories += int(input(calorie_prompt)) and then catch the ValueError exception if the input can't be converted to an integer. This will allow us to prompt the user to enter the calorie data again if it's invalid. What do you think?

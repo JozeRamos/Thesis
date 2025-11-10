@@ -1,0 +1,301 @@
+Run 1: test_RAG took 39.3496 seconds
+Run 2: test_RAG took 35.9320 seconds
+Run 3: test_RAG took 35.5146 seconds
+Run 4: test_RAG took 40.0271 seconds
+Run 5: test_RAG took 53.6362 seconds
+------------------------------------------------------------------------------
+
+Run 1: test_LLM_calls took 0.7446 seconds
+Run 2: test_LLM_calls took 0.1332 seconds
+Run 3: test_LLM_calls took 0.2002 seconds
+Run 4: test_LLM_calls took 0.1706 seconds
+Run 5: test_LLM_calls took 0.1309 seconds
+------------------------------------------------------------------------------
+
+
+generate_cot_response:
+Time Taken: 0.181723582
+Prompt tokens: 1141
+Completion tokens: 44
+Total tokens: 1185
+---------------------------------------------------------------
+
+
+generate_cot_response:
+Time Taken: 0.165034766
+Prompt tokens: 1141
+Completion tokens: 42
+Total tokens: 1183
+---------------------------------------------------------------
+
+
+generate_cot_response:
+Time Taken: 0.206277884
+Prompt tokens: 1141
+Completion tokens: 54
+Total tokens: 1195
+---------------------------------------------------------------
+
+
+generate_cot_response:
+Time Taken: 0.311029995
+Prompt tokens: 1141
+Completion tokens: 58
+Total tokens: 1199
+---------------------------------------------------------------
+
+
+generate_cot_response:
+Time Taken: 0.22569864
+Prompt tokens: 1141
+Completion tokens: 62
+Total tokens: 1203
+---------------------------------------------------------------
+
+
+self_consistency:
+Time Taken: 0.90678733
+Prompt tokens: 1210
+Completion tokens: 254
+Total tokens: 1464
+---------------------------------------------------------------
+
+
+self_consistency:
+Time Taken: 0.773198138
+Prompt tokens: 1210
+Completion tokens: 166
+Total tokens: 1376
+---------------------------------------------------------------
+
+
+self_consistency:
+Time Taken: 0.692312072
+Prompt tokens: 1210
+Completion tokens: 207
+Total tokens: 1417
+---------------------------------------------------------------
+
+
+self_consistency:
+Time Taken: 0.707456264
+Prompt tokens: 1210
+Completion tokens: 165
+Total tokens: 1375
+---------------------------------------------------------------
+
+
+self_consistency:
+Time Taken: 0.8409491
+Prompt tokens: 1210
+Completion tokens: 198
+Total tokens: 1408
+---------------------------------------------------------------
+
+
+feedback:
+Time Taken: 0.946317764
+Prompt tokens: 2356
+Completion tokens: 248
+Total tokens: 2604
+---------------------------------------------------------------
+
+
+feedback:
+Time Taken: 0.76249806
+Prompt tokens: 2356
+Completion tokens: 186
+Total tokens: 2542
+---------------------------------------------------------------
+
+
+feedback:
+Time Taken: 0.757526274
+Prompt tokens: 2356
+Completion tokens: 236
+Total tokens: 2592
+---------------------------------------------------------------
+
+
+feedback:
+Time Taken: 0.888844928
+Prompt tokens: 2356
+Completion tokens: 197
+Total tokens: 2553
+---------------------------------------------------------------
+
+
+feedback:
+Time Taken: 0.741466724
+Prompt tokens: 2356
+Completion tokens: 175
+Total tokens: 2531
+---------------------------------------------------------------
+
+
+refine:
+Time Taken: 0.366091246
+Prompt tokens: 1641
+Completion tokens: 57
+Total tokens: 1698
+---------------------------------------------------------------
+
+
+refine:
+Time Taken: 0.272816405
+Prompt tokens: 1641
+Completion tokens: 55
+Total tokens: 1696
+---------------------------------------------------------------
+
+
+refine:
+Time Taken: 0.310700375
+Prompt tokens: 1641
+Completion tokens: 65
+Total tokens: 1706
+---------------------------------------------------------------
+
+
+refine:
+Time Taken: 0.27424371
+Prompt tokens: 1641
+Completion tokens: 49
+Total tokens: 1690
+---------------------------------------------------------------
+
+
+refine:
+Time Taken: 0.300238435
+Prompt tokens: 1641
+Completion tokens: 55
+Total tokens: 1696
+---------------------------------------------------------------
+
+
+next_steps:
+Time Taken: 0.431416315
+Prompt tokens: 1312
+Completion tokens: 74
+Total tokens: 1386
+---------------------------------------------------------------
+
+
+next_steps:
+Time Taken: 0.378862392
+Prompt tokens: 1312
+Completion tokens: 59
+Total tokens: 1371
+---------------------------------------------------------------
+
+
+next_steps:
+Time Taken: 0.294545677
+Prompt tokens: 1312
+Completion tokens: 57
+Total tokens: 1369
+---------------------------------------------------------------
+
+
+next_steps:
+Time Taken: 0.294287201
+Prompt tokens: 1312
+Completion tokens: 52
+Total tokens: 1364
+---------------------------------------------------------------
+
+
+next_steps:
+Time Taken: 0.371136114
+Prompt tokens: 1312
+Completion tokens: 72
+Total tokens: 1384
+---------------------------------------------------------------
+
+Run 1: test_RAG took 35.3076 seconds
+Run 2: test_RAG took 35.8872 seconds
+Run 3: test_RAG took 35.1920 seconds
+Run 4: test_RAG took 34.0164 seconds
+Run 5: test_RAG took 38.2126 seconds
+------------------------------------------------------------------------------
+
+
+redirect_user:
+Time Taken: 0.482464372
+Prompt tokens: 1306
+Completion tokens: 78
+Total tokens: 1384
+---------------------------------------------------------------
+
+
+redirect_user:
+Time Taken: 0.382513723
+Prompt tokens: 1306
+Completion tokens: 68
+Total tokens: 1374
+---------------------------------------------------------------
+
+
+redirect_user:
+Time Taken: 0.580152073
+Prompt tokens: 1306
+Completion tokens: 103
+Total tokens: 1409
+---------------------------------------------------------------
+
+
+redirect_user:
+Time Taken: 0.495865551
+Prompt tokens: 1306
+Completion tokens: 93
+Total tokens: 1399
+---------------------------------------------------------------
+
+
+redirect_user:
+Time Taken: 0.522907901
+Prompt tokens: 1306
+Completion tokens: 90
+Total tokens: 1396
+---------------------------------------------------------------
+
+
+feedback:
+Time Taken: 0.776161245
+Prompt tokens: 2443
+Completion tokens: 205
+Total tokens: 2648
+---------------------------------------------------------------
+
+
+feedback:
+Time Taken: 0.837258054
+Prompt tokens: 2443
+Completion tokens: 201
+Total tokens: 2644
+---------------------------------------------------------------
+
+
+feedback:
+Time Taken: 0.817106094
+Prompt tokens: 2443
+Completion tokens: 183
+Total tokens: 2626
+---------------------------------------------------------------
+
+
+feedback:
+Time Taken: 0.713589501
+Prompt tokens: 2443
+Completion tokens: 195
+Total tokens: 2638
+---------------------------------------------------------------
+
+
+feedback:
+Time Taken: 0.600417503
+Prompt tokens: 2443
+Completion tokens: 162
+Total tokens: 2605
+---------------------------------------------------------------
+

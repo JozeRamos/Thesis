@@ -1,0 +1,103 @@
+Completed: 8:23
+
+Choose a scenario:
+
+Calory Tracker
+Bug Hunt
+Ride Sharing
+Medicine
+2
+
+Bug Hunt scenario selected.
+
+Here is the scenario description:
+
+Your supervisor reports that students are receiving inaccurate final grades, some students are getting grades of 0 or 'None' while others are getting scores that are not adding up correctly. The grading system was quickly written by an intern and now must be debugged. You are given access to the script and a sample dataset. Your job is to identify the bugs, correct them, and ensure the output is reliable. What is your first step?
+
+What does the code look like?
+
+import csv
+
+def calculate_final_grade(assignments, tests):
+    if not assignments or not tests:
+        return None
+    assignment_avg = sum(assignments) / len(assignments)
+    test_avg = sum(tests) / len(tests)
+    final_grade = assignment_avg * 0.3 + test_avg * 0.8
+    return final_grade
+
+def read_student_data(file_path):
+    with open(file_path, 'r') as f:
+        reader = csv.DictReader(f)
+        results = {}
+        for row in reader:
+            name = row['name']
+            try:
+                assignments = [int(row[f'assignment{i}']) for i in range(1, 4)]
+                tests = [int(row[f'test{i}']) for i in range(1, 3)]
+                grade = calculate_final_grade(assignments, tests)
+                results[name] = grade
+            except Exception as e:
+                print(f"Error processing {name}: {e}")
+                continue
+    return results
+
+grades = read_student_data('student_grades.csv')
+for student, grade in grades.items():
+    print(f"{student}: {grade}")
+
+Next Steps: It looks like you're taking a closer look at the code. That's a great start!
+
+Now, as you're examining the read_student_data function, think about how it handles student records with missing or incomplete data. Are there any potential pitfalls in the way it processes assignments and tests?
+
+what is the student_grades.csv content?
+
+The content of student_grades.csv is:
+
+name,assignment1,assignment2,assignment3,test1,test2 Alice,85,90,88,92,87 Bob,75,80,70,78,82 Charlie,90,,95,88,
+
+Next Steps: When examining the read_student_data function, I notice that it uses a try-except block to catch any exceptions that might occur during data processing. However, it doesn't seem to handle missing or invalid data explicitly. What would happen if a student were missing a grade for an assignment or test? Would the current implementation correctly handle that situation, or might it lead to errors or skipped grades?
+
+No
+
+What would happen if a student had an empty or invalid assignment or test grade? Should we add explicit checks for these cases? Perhaps we could examine the lines where assignments and tests are parsed to ensure we're handling invalid data correctly.
+
+I would assume that the value is 0
+
+Let's build upon your idea to assume a value of 0 for missing grades. What if we add a check like if row[f'assignment{i}'] == '' or not row[f'assignment{i}']: assignments.append(0) to handle empty or invalid grades? This way, we can ensure students aren't skipped entirely due to incomplete data.
+
+Next Steps: Let's take a closer look at the calculate_final_grade function. The weights for assignments and tests seem to be hardcoded. Are you sure that the 0.3 and 0.8 weights are correct? Maybe there's a requirement for the weights to add up to a specific value?
+
+I wouldn't hardcode the weight of the assignments and tests, that would need to be a user input
+
+I understand your point about user-input weights, but let's first ensure the current system is correctly distributing importance between assignments and tests. Do the hardcoded weights of 0.3 and 0.8 add up to a specific value, like 1, to ensure accurate grading? This is crucial because hardcoded weights can lead to incorrect calculations if they don't add up correctly, resulting in inaccurate final grades.
+
+No, so I would raise an exception
+
+Let's revisit the weight distribution principle. Since you considered raising an exception, think about this instead: if the weights don't add up to 1, how would that impact the final grades' accuracy? To ensure fair grading, can we adjust the weights so they balance the importance of assignments and tests correctly?
+
+If we assume that they are going to be hardcoded yes, if not, we would need to evaluate if the user input for the weight distribution sums up to 1, otherwise raise an exception.
+
+Let's revisit the weight distribution principle. Since you considered evaluating user input, think about this: how would you handle weights that don't add up to 1? Would you adjust them to ensure accurate grading, or would you raise an exception? Consider the implications of unbalanced weights on final grades and how to maintain fairness in the grading system.
+
+Next Steps: You've correctly identified the need for weighted inputs, but now let's focus on the current hardcoded values. If the weights don't add up to 1, would that affect the overall grade distribution? Could we normalize the weights to ensure fair grading, or would you raise an exception to alert the user about the inconsistency? Consider how this would impact the grading system's accuracy.
+
+I would alert the user about the inconsistency
+
+Here's a revised response that addresses the weaknesses and enhances guidance:
+
+"Since the weights don't add up to 1, how would you approach normalizing them to ensure accurate final grades? Would dividing each weight by their sum be a viable solution? Consider the implications of unbalanced weights on the grading system's accuracy and how normalizing them would maintain fairness. What would be the benefits of normalizing weights, and how would it impact the overall grade distribution?"
+
+I would devide by their sum but I would prefer to ask them as an user input and evaluate if they sum up to 1, if not, alert the user.
+
+Congratulations you completed the scenario.
+
+Choose a new scenario:
+
+Calory Tracker
+Bug Hunt
+Ride Sharing
+Medicine
+
+
+What is up?

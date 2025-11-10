@@ -1,0 +1,49 @@
+Completed: 4:07
+
+Bug Hunt scenario selected.
+
+Here is the scenario description:
+
+Your supervisor reports that students are receiving inaccurate final grades, some students are getting grades of 0 or 'None' while others are getting scores that are not adding up correctly. The grading system was quickly written by an intern and now must be debugged. You are given access to the script and a sample dataset. Your job is to identify the bugs, correct them, and ensure the output is reliable. What is your first step?
+
+What does the code look like?
+
+The code looks like: import csv
+
+def calculate_final_grade(assignments, tests): if not assignments or not tests: return None assignment_avg = sum(assignments) / len(assignments) test_avg = sum(tests) / len(tests) final_grade = assignment_avg * 0.3 + test_avg * 0.8 return final_grade
+
+def read_student_data(file_path): with open(file_path, 'r') as f: reader = csv.DictReader(f) results = {} for row in reader: name = row['name'] try: assignments = [int(row[f'assignment{i}']) for i in range(1, 4)] tests = [int(row[f'test{i}']) for i in range(1, 3)] grade = calculate_final_grade(assignments, tests) results[name] = grade except Exception as e: print(f"Error processing {name}: {e}") continue return results
+
+grades = read_student_data('student_grades.csv') for student, grade in grades.items(): print(f"{student}: {grade}")
+
+Next Steps: You're taking a close look at the code. Now, let's think about what might be causing the issue with students having missing grades. Can you spot any potential problems with how the script is handling missing or invalid data? Maybe there's a specific point where the script assumes certain data will always be present, but in reality, it might not be.
+
+What does the CSV look like?
+
+The CSV looks like: name,assignment1,assignment2,assignment3,test1,test2 Alice,85,90,88,92,87 Bob,75,80,70,78,82 Charlie,90,,95,88,
+
+Next Steps: Let's think about how the script handles missing or invalid data. I notice that the read_student_data function uses a try-except block to catch exceptions when processing student data. However, what happens if a student is missing an assignment or test score? Does the script assume that all students will have complete data?
+
+What's the error?
+
+The error is that Charlie has an empty string value for one of his assignments, which cannot be converted to an integer.
+
+Next Steps: Great observation about the CSV file! Now, think about what happens when the script encounters an empty string value, like Charlie's missing assignment score. How do you think the int() function will react when it tries to convert that empty string to an integer?
+
+the int() function should check before if it's an integer or if it has some other values such as 'Alice'
+
+You could use a conditional statement like if row[f'assignment{i}'].isdigit(): to check if the value is numeric before trying to convert it. This will ensure that the int() function isn't attempted on non-numeric values like empty strings. How do you think this check will impact the overall flow of the script?
+
+Next Steps: Excellent thinking on checking for numeric values! That should indeed prevent the int() function from throwing an error. Now, let's take a closer look at the calculate_final_grade function. Are you confident that the weights for assignments and tests are correctly balanced? Perhaps there's a subtle issue with how these weights are being applied that's causing the grade calculations to be consistently too high.
+
+we are calculating 0.3 and 0.8 and that doesn't sum up to 1 but instead 1.1 We need to change 0.8 to 0.7 or 0.3 to 0.2
+
+Now that we've corrected the weights, let's test the script with the updated values and review the output. Consider using the round() function to ensure grade calculations are accurate, and double-check that you're not encountering data type mismatches. What do you expect to see in the output, and are there any other factors that could still be contributing to inaccurate grades?
+
+Next Steps: Great job adjusting the weights! Now, let's focus on the students who still have missing grades despite having partial data. You've fixed the calculation, but what about students like Charlie, who had an empty string value for one of his assignments? How do you think the script should handle cases where students are missing some, but not all, of their assignment or test scores? Should the script skip them entirely or try to do something else?
+
+we need to ensure round() rounds values such as 0.5 to 1 and 0.4 to 0
+
+Let's revisit the approach to handle missing grades. Since we're ensuring rounded values are accurate, how about we provide a fallback value, like 0, for missing assignments or tests? This way, students like Charlie wouldn't be skipped entirely. Alternatively, we could pro-rate their scores based on the available data. What are the implications of each approach, and which one do you think is more fair?
+
+the best and fairer approach would be to handle the missing values as a 0, as if he missed the test

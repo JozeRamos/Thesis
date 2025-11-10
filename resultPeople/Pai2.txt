@@ -1,0 +1,90 @@
+Completed: 9:12
+
+Choose a scenario:
+
+Calory Tracker
+Bug Hunt
+Ride Sharing
+Medicine
+2
+
+Bug Hunt scenario selected.
+
+Here is the scenario description:
+
+Your supervisor reports that students are receiving inaccurate final grades, some students are getting grades of 0 or 'None' while others are getting scores that are not adding up correctly. The grading system was quickly written by an intern and now must be debugged. You are given access to the script and a sample dataset. Your job is to identify the bugs, correct them, and ensure the output is reliable. What is your first step?
+
+What does the code look like
+
+The code looks like:
+
+import csv
+
+def calculate_final_grade(assignments, tests):
+    if not assignments or not tests:
+        return None
+    assignment_avg = sum(assignments) / len(assignments)
+    test_avg = sum(tests) / len(tests)
+    final_grade = assignment_avg * 0.3 + test_avg * 0.8
+    return final_grade
+
+def read_student_data(file_path):
+    with open(file_path, 'r') as f:
+        reader = csv.DictReader(f)
+        results = {}
+        for row in reader:
+            name = row['name']
+            try:
+                assignments = [int(row[f'assignment{i}']) for i in range(1, 4)]
+                tests = [int(row[f'test{i}']) for i in range(1, 3)]
+                grade = calculate_final_grade(assignments, tests)
+                results[name] = grade
+            except Exception as e:
+                print(f"Error processing {name}: {e}")
+                continue
+        return results
+
+grades = read_student_data('student_grades.csv')
+for student, grade in grades.items():
+    print(f"{student}: {grade}")
+
+Next Steps: Let's take a closer look at the read_student_data function. You've got the code, and now it's time to analyze it. Notice how the function is handling the input data from the CSV file. Are there any potential issues with the way it's processing the 'assignments' and 'tests' variables? Think about what might happen if a student is missing some of that data...
+
+What does the CSV look like
+
+The CSV looks like: name,assignment1,assignment2,assignment3,test1,test2 Alice,85,90,88,92,87 Bob,75,80,70,78,82 Charlie,90,,95,88,
+
+Next Steps: You're carefully examining the read_student_data function, which is a great start. Now, think about how it's handling the input data from the CSV file. Specifically, consider what might happen if a student is missing some assignment or test scores. Are there any opportunities for the code to raise an exception or skip over certain students when processing the data?
+
+What's the error
+
+The error is: Error processing Charlie: invalid literal for int() with base 10: ''
+
+Next Steps: It seems like you're getting close to identifying the issue. The error message indicates that the script is trying to convert an empty string to an integer, which is causing the problem. Now, think about how you can prevent this from happening. Are there any ways to validate the input data before trying to convert it to integers? Perhaps you can add some checks to ensure that the values are not empty or invalid before processing them.
+
+validate data firs
+
+Think about using a simple if statement to check if the value is not empty or invalid before converting it to an integer. For example, if row[f'assignment{i}'] != '' and row[f'assignment{i}'].strip().isdigit(): can ensure the value is not empty and can be converted to an integer. This approach will help prevent errors when processing students with missing data.
+
+Next Steps: Excellent job on validating the input data! You're on the right track. Now, let's shift our focus to the calculate_final_grade function. You've ensured that the input data is clean, but what about the actual calculation? Are the weights for assignments and tests balanced correctly? Think about whether the current weights might be causing the consistently high grades.
+
+in final_grade, test_avg * 0.7
+
+"Now that you've adjusted the test weight to 0.7, let's ensure the weights are balanced. To maintain a fair grading system, we need the weights to add up to 1. What's your plan to adjust the assignment weight accordingly?"
+
+Next Steps: Great effort on adjusting the test weight! Now that you've made progress on the grade calculation, let's revisit how the system handles incomplete data. You've ensured that the input data is clean, but what about students with partial data? Should the system skip them entirely or provide a fallback value? Consider how you can adapt the calculate_final_grade function to handle these cases. How will you modify it to accommodate students with missing grades?
+
+The system should skip them.
+
+Consider providing a default score, like 0, for missing grades to ensure students aren't entirely excluded from the grading process. How can you modify the calculate_final_grade function to handle such cases? Specifically, think about adding a conditional statement to handle missing values.
+
+adding a if statement
+
+Congratulations you completed the scenario.
+
+Choose a new scenario:
+
+Calory Tracker
+Bug Hunt
+Ride Sharing
+Medicine

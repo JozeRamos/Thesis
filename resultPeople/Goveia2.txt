@@ -1,0 +1,83 @@
+Completed: 7:25
+
+Choose a scenario:
+
+Calory Tracker
+Bug Hunt
+Ride Sharing
+Medicine
+2
+
+Bug Hunt scenario selected.
+
+Here is the scenario description:
+
+Your supervisor reports that students are receiving inaccurate final grades, some students are getting grades of 0 or 'None' while others are getting scores that are not adding up correctly. The grading system was quickly written by an intern and now must be debugged. You are given access to the script and a sample dataset. Your job is to identify the bugs, correct them, and ensure the output is reliable. What is your first step?
+
+What does the code look like
+
+The code looks like:
+
+import csv
+
+def calculate_final_grade(assignments, tests):
+    if not assignments or not tests:
+        return None
+    assignment_avg = sum(assignments) / len(assignments)
+    test_avg = sum(tests) / len(tests)
+    final_grade = assignment_avg * 0.3 + test_avg * 0.8
+    return final_grade
+
+def read_student_data(file_path):
+    with open(file_path, 'r') as f:
+        reader = csv.DictReader(f)
+        results = {}
+        for row in reader:
+            name = row['name']
+            try:
+                assignments = [int(row[f'assignment{i}']) for i in range(1, 4)]
+                tests = [int(row[f'test{i}']) for i in range(1, 3)]
+                grade = calculate_final_grade(assignments, tests)
+                results[name] = grade
+            except Exception as e:
+                print(f"Error processing {name}: {e}")
+                continue
+        return results
+
+grades = read_student_data('student_grades.csv')
+for student, grade in grades.items():
+    print(f"{student}: {grade}")
+
+Next Steps: Great that you wanted to take a closer look at the code! Now, let's think about how the script handles student data. Are there any potential issues with the way it processes the 'assignments' and 'tests' variables? Maybe there's a case where the script isn't prepared to handle missing or invalid data.
+
+What's the error
+
+The error is: Error processing Charlie: invalid literal for int() with base 10: ''. This means that the program is trying to convert an empty string to an integer, which is causing the error. This is happening because Charlie's assignment2 grade is empty in the CSV file.
+
+Next Steps: It looks like you're on the right track! You've identified the error, which is a great start. Now, think about how the script is handling the input data. Are you sure it's prepared to handle cases where the 'assignments' or 'tests' variables might be empty or contain invalid values? Maybe there's a way to add a simple check to ensure that the script doesn't try to convert empty strings to integers.
+
+Using try statement to handle the exception
+
+Let's focus on validating the 'assignments' and 'tests' variables. How can we add a simple check to ensure the script doesn't try to convert empty strings to integers? Maybe we can use a conditional statement to verify the values before attempting to convert them.
+
+Use if else to check if the string is empty and handle it accordingly
+
+Great job on thinking about edge cases! To handle empty strings, you could assign a default value or skip them altogether. Consider the implications of each approach on the final grades. Would assigning a default value, like 0, be fairer to students with incomplete data, or should you skip them to maintain the integrity of the grading system?
+
+Next Steps: You're absolutely on the right track with using an if-else statement to handle empty strings! Now, let's think about the implications of assigning a default value, like 0, or skipping them altogether. That's a crucial consideration in maintaining the integrity of the grading system. But, moving on to the calculation itself, are you confident that the weights for assignments and tests are correctly balanced? Might there be a discrepancy that's causing the grades to be consistently too high?
+
+Yes, either the assignments or tests are 0.1 heavier than they should
+
+Let's dive deeper into the calculation logic. Are the weights for assignments and tests correctly balanced? Specifically, do the weights add up to 1? Incorrectly balanced weights could lead to inflated or deflated grades, which would be unfair to the students. Perhaps we should adjust the weights to ensure they total 100% and accurately reflect the intended significance of each component in the final grade calculation.
+
+This should do it:
+
+final_grade = assignment_avg * 0.3 + test_avg * 0.7
+
+Let's focus on a balanced calculation. Since the weights should add up to 1, consider adjusting the assignment and test weights to 0.4 and 0.6, respectively. This ensures a fair distribution of importance between assignments and tests in the final grade calculation.
+
+Next Steps: You've adjusted the weights, but we still have students with missing grades. Let's think about how to handle those pesky missing values. How can we ensure that students with partial data aren't skipped entirely? Perhaps there's a way to provide a reasonable fallback value when data is missing or invalid. What would be a fair approach in this scenario?
+
+In case of missing value give them a 50% value
+
+Congratulations you completed the scenario.

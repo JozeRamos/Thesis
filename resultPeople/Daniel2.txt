@@ -1,0 +1,119 @@
+Completed: 6:27
+
+Choose a scenario:
+
+Calory Tracker
+Bug Hunt
+Ride Sharing
+Medicine
+2
+
+Bug Hunt scenario selected.
+
+Here is the scenario description:
+
+Your supervisor reports that students are receiving inaccurate final grades, some students are getting grades of 0 or 'None' while others are getting scores that are not adding up correctly. The grading system was quickly written by an intern and now must be debugged. You are given access to the script and a sample dataset. Your job is to identify the bugs, correct them, and ensure the output is reliable. What is your first step?
+
+What does the code look like?
+
+The code looks like:
+
+import csv
+
+def calculate_final_grade(assignments, tests):
+    if not assignments or not tests:
+        return None
+    assignment_avg = sum(assignments) / len(assignments)
+    test_avg = sum(tests) / len(tests)
+    final_grade = assignment_avg * 0.3 + test_avg * 0.8
+    return final_grade
+
+def read_student_data(file_path):
+    with open(file_path, 'r') as f:
+        reader = csv.DictReader(f)
+        results = {}
+        for row in reader:
+            name = row['name']
+            try:
+                assignments = [int(row[f'assignment{i}']) for i in range(1, 4)]
+                tests = [int(row[f'test{i}']) for i in range(1, 3)]
+                grade = calculate_final_grade(assignments, tests)
+                results[name] = grade
+            except Exception as e:
+                print(f"Error processing {name}: {e}")
+                continue
+        return results
+
+grades = read_student_data('student_grades.csv')
+for student, grade in grades.items():
+    print(f"{student}: {grade}")
+
+Next Steps: Let's take a closer look at the read_student_data function. You're trying to convert the values from the CSV file to integers. Have you considered what might happen if the CSV file contains empty or invalid values for assignments or tests? How do you think the script should handle those situations?
+
+What does the CSV look like?
+
+The CSV looks like: name,assignment1,assignment2,assignment3,test1,test2 Alice,85,90,88,92,87 Bob,75,80,70,78,82 Charlie,90,,95,88,
+
+Next Steps: It looks like you're concerned about the CSV file contents. That's a great start! Now, let's think about how the read_student_data function handles those values. What if, for instance, Charlie's empty assignment value was passed to the calculate_final_grade function? How would it behave?
+
+What's the error?
+
+The error is that there is an empty string in the CSV file for Charlie's assignment2 which can't be converted to an integer.
+
+Next Steps: Excellent catch on the empty string in the CSV file! Now, think about how the read_student_data function is currently handling those values. Are we blindly trying to convert every value to an integer, even if it's empty or invalid? Shouldn't we add some safeguards to ensure we're not passing invalid data to the calculate_final_grade function?
+
+change the code that if it is null, we assume its a 0
+
+Let's add a safeguard to handle invalid data. If we don't, it can lead to errors or incorrect grades. We can add a conditional statement to check if the value is empty or null before converting it to an integer. This ensures we're not trying to convert invalid data to integers. What do you think?
+
+Next Steps: Your suggestion to assume a score of 0 for null values is a good start, but we need to ensure that our grade calculations are accurate. Now that we're handling invalid data, let's take a closer look at the calculate_final_grade function. Are the weights for assignments and tests correctly balanced? Could an imbalance be contributing to the consistently high grades?
+
+what is the error
+
+Excellent catch on the empty string in the CSV file! Now, think about how the read_student_data function is currently handling those values. Are we blindly trying to convert every value to an integer, even if it's empty or invalid? Shouldn't we add a conditional statement to check if the value is empty or null before converting it to an integer, and if so, assign a default value like 0?
+
+Next Steps: You're thinking critically about the weights for assignments and tests. Are you considering the cumulative effect of the weights on the final grade? Perhaps a slight adjustment to ensure they add up to 1 would bring the grades more in line with expectations.
+
+adjust the value used to calculate final_grade to be equal to 1
+
+Let's examine how the current weights impact the final grades. To achieve a balanced weighting, could you adjust the assignment and test weights so they add up to 1?
+
+Next Steps: Great thinking on adjusting the weights! Now, let's think about those students who still have missing grades despite having partial data. How can we ensure that we're not skipping them entirely? Shouldn't we consider providing a default or fallback value for those missing or incomplete values, so we can still calculate a grade, even if it's not perfect?
+
+what is the code?
+
+The code is:
+
+import csv
+
+def calculate_final_grade(assignments, tests):
+    if not assignments or not tests:
+        return None
+    assignment_avg = sum(assignments) / len(assignments)
+    test_avg = sum(tests) / len(tests)
+    final_grade = assignment_avg * 0.3 + test_avg * 0.8
+    return final_grade
+
+def read_student_data(file_path):
+    with open(file_path, 'r') as f:
+        reader = csv.DictReader(f)
+        results = {}
+        for row in reader:
+            name = row['name']
+            try:
+                assignments = [int(row[f'assignment{i}']) for i in range(1, 4)]
+                tests = [int(row[f'test{i}']) for i in range(1, 3)]
+                grade = calculate_final_grade(assignments, tests)
+                results[name] = grade
+            except Exception as e:
+                print(f"Error processing {name}: {e}")
+                continue
+        return results
+
+grades = read_student_data('student_grades.csv')
+for student, grade in grades.items():
+    print(f"{student}: {grade}")
+
+Next Steps: You're examining the code closely. Now, think about the students who still have missing grades despite having partial data. How can we ensure that we're not skipping them entirely in the calculate_final_grade function? Shouldn't we consider providing a default or fallback value for those missing or incomplete values, so we can still calculate a grade, even if it's not perfect?
+
+yes add a default value of 0

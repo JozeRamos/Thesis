@@ -1,0 +1,77 @@
+Choose a scenario:
+
+Calory Tracker
+Bug Hunt
+Ride Sharing
+Medicine
+2
+
+Bug Hunt scenario selected.
+
+Here is the scenario description:
+
+Your supervisor reports that students are receiving inaccurate final grades, some students are getting grades of 0 or 'None' while others are getting scores that are not adding up correctly. The grading system was quickly written by an intern and now must be debugged. You are given access to the script and a sample dataset. Your job is to identify the bugs, correct them, and ensure the output is reliable. What is your first step?
+
+What does the code look like?
+
+Here is the code:
+
+import csv
+
+def calculate_final_grade(assignments, tests):
+    if not assignments or not tests:
+        return None
+    assignment_avg = sum(assignments) / len(assignments)
+    test_avg = sum(tests) / len(tests)
+    final_grade = assignment_avg * 0.3 + test_avg * 0.8
+    return final_grade
+
+def read_student_data(file_path):
+    with open(file_path, 'r') as f:
+        reader = csv.DictReader(f)
+        results = {}
+        for row in reader:
+            name = row['name']
+            try:
+                assignments = [int(row[f'assignment{i}']) for i in range(1, 4)]
+                tests = [int(row[f'test{i}']) for i in range(1, 3)]
+                grade = calculate_final_grade(assignments, tests)
+                results[name] = grade
+            except Exception as e:
+                print(f"Error processing {name}: {e}")
+                continue
+        return results
+
+grades = read_student_data('student_grades.csv')
+for student, grade in grades.items():
+    print(f"{student}: {grade}")
+
+Next Steps: Now that we have the code, let's take a closer look. I notice that the script assumes that all students have complete data. What if a student is missing an assignment or a test score? How do you think the script would handle that situation? Would it skip the student or throw an error? Think about how we can make the script more robust in handling such cases.
+
+What does the CSV look like?
+
+The CSV looks like this:
+
+name,assignment1,assignment2,assignment3,test1,test2 Alice,85,90,88,92,87 Bob,75,80,70,78,82 Charlie,90,,95,88,
+
+Next Steps: You're wondering how the script would handle students with missing data. That's a great concern! Let's take a closer look at the read_student_data function. Notice how it's trying to convert values to integers. What if a student has an empty string or a non-numeric value in their assignment or test scores? How would the int() function react to that? Think about what kind of check or safeguard we could add to ensure the script doesn't crash or skip students with incomplete data.
+
+What's the error?
+
+The error is: Error processing Charlie: invalid literal for int() with base 10: ''.
+
+Next Steps: It looks like the script is crashing when it encounters a student with missing data, like Charlie. That's because the int() function can't convert an empty string to an integer. Let's think about how we can prevent this crash. Instead of immediately trying to convert the values to integers, what if we added a simple check to see if the value is valid before trying to convert it? How might we do that?
+
+We should take the value and check if its a number
+
+That's a great idea to check if the value is a number! To ensure the script doesn't crash, consider using a conditional statement with str.isdigit() to validate the input. This way, you can handle invalid inputs more elegantly. How would you like to handle situations where the input is not a valid number, such as assigning a default value or skipping the student?
+
+Next Steps: You're on the right track! By checking if the value is a number, you'll prevent the script from crashing. Now, think about the grade calculation logic. Are the weights for assignments and tests correctly proportioned? Perhaps the high grades are due to an imbalance in the weightings. Could you review the calculation in the calculate_final_grade function and see if the weights add up to 1?
+
+we should change the weights to 0.2 for assignment
+
+Let's revisit the weight adjustment. You suggested changing the assignment weight to 0.2. That's a good start, but we need to ensure the weights add up to 1. If we set the assignment weight to 0.2, how would you distribute the remaining 0.8? Would setting the test weight to 0.8 be reasonable, considering the importance of each component in the final grade calculation?
+
+Next Steps: You're thinking of adjusting the weights, but let's not forget about the students with incomplete data. We still need to handle those cases. Instead of skipping them entirely, how can we ensure they still get a grade, even if it's not perfect? Perhaps we can provide a fallback value or a default grade in cases where data is missing or invalid. What do you think?
+
+we should ensure that cases with missing data have a default value of 0

@@ -1,0 +1,47 @@
+Calory Tracker scenario selected.
+
+Here is the scenario description:
+
+You're building a calorie tracker. It should ask how many meals were eaten, take calorie inputs, then give feedback based on total calories. What's the first part you'll implement?
+
+For this scenario you don't need to write code, you can just state what you would do to complete the task.
+
+First I'd create some variables to store the users data. For example in a class User with that. I'd also have some sort of map to seperate dates so I have calories per day, etc for better data handling. Then I'd create some sort of input receiver and GUI so the user can create it
+
+I like where your thinking is going, Junior Developer! It's great that you're considering how to store and organize the user's data. However, let's take a step back and focus on the initial task at hand. Remember, we need to use a built-in Python function to get user input. Can you think of which one to use to ask the user how many meals they had today?
+
+It depends. I'm thinking more of a GUI based application. The function would depend. If it was a CMD GUI it'd be one thing, if it was a more graphic interface, such as pygame, it'd be another
+
+I like where you're going with the GUI-based application idea. However, for now, let's focus on using Python's built-in functions to get user input. Think about how you can use the input() function to ask the user how many meals they had today. This will help us structure our loop and make the program more efficient.
+
+I could have a while(true) loop that accepts calories inputs until the user sends a special code, such as 'exit' input
+
+I love the idea of using a special code to exit the loop, Junior Developer! That shows creative thinking. However, let's take a step back and focus on getting the number of meals from the user first. Using the input() function to ask the user how many meals they had today is a more efficient approach. It allows us to structure our loop around that number, avoiding repetition. Plus, it's simpler and more straightforward. What do you think?
+
+Next Steps: I see you're still thinking about the loop, Junior Developer! That's great, but let's not get ahead of ourselves. We've got the number of meals from the user, now we need to think about how we're going to store the total calories. How do you think we can initialize a variable to keep track of the total calories consumed?
+
+I believe thats fine. I'd prefer my approach as if the user says it had 3 meals but remembers one extra one in the middle of inputting it wouldn't make him have to stop and start again and lose progress. Does the user also store which meal it was or only calories? If it stores the meal we could have a map that would map the meal to the calorie. We could also have a map that maps a day to a list of calories. something like calories(date, int) = {}. A user class could also be good for some structure
+
+Great thinking, Junior Developer! Now that we have the number of meals from the user, let's focus on initializing a variable to store the total calories consumed. How about we create a variable called total_calories and set it to 0? This will allow us to add up the calories from each meal as we loop through them. Does that make sense?
+
+yes sure
+
+Now that we have the number of meals from the user, let's focus on initializing a variable to store the total calories consumed. How about we create a variable called total_calories and set it to 0? This will allow us to add up the calories from each meal as we loop through them. Can you think of any other ways we could structure our program to make it more efficient or user-friendly?
+
+No. Maybe have it in a class field? have a calory calculator so the user can input just the food and not the calories?
+
+Let's refine our calorie tracker. Since we have the number of meals, we can create a total_calories variable to store the daily intake. How do you think we could use a class to organize our calorie tracker? Would it be beneficial to have a calorie calculator to help users input just the food, not the calories? Maybe we could create a method to calculate the calories based on the food input?
+
+Next Steps: You're thinking about using a class to organize our calorie tracker, Junior Developer! That's a great idea. Having a calorie calculator to help users input just the food, not the calories, could be really useful. But first, let's focus on initializing that total_calories variable. Think about how you can use this variable to store the sum of calories from each meal. How will you ensure that this variable is updated correctly as we loop through each meal?
+
+If we do have a class we can just initialize total_calories = 0 in the constructor. Our program is not parallelized, therefore it shouldn't be a problem to ensure it is updated correctly. If we have the user inputs in some sort of map or list we can just loop through it and add to total_calories
+
+Initializing total_calories to 0 in the constructor is a solid start. Now, let's think about how we can update this variable as we loop through each meal. Since we'll be asking the user to input the calories for each meal, we can simply add each meal's calories to the total_calories variable. Using a += operator inside our loop will ensure total_calories accurately reflects the user's daily intake. What do you think is the best way to organize our class structure to make our program more efficient and user-friendly?
+
+Next Steps: Great thinking, Junior Developer! You're on the right track by considering how to update the total_calories variable inside the loop. Now, let's think about how we can implement the loop to ask for calorie input for each meal. How can we use the number of meals the user input earlier to structure our loop? Would a for loop or a while loop be more suitable for this task?
+
+a for loop
+
+Using a for loop will ensure we get calorie input for each meal exactly as many times as the user specified. Now, think about how to ask for calorie input within the loop. Could you use a variable to store the calorie input for each meal, and then add it to total_calories?
+
+Next Steps: You've chosen a for loop to iterate over the meals. Now, think about how to ask for calorie input within the loop. Could you use a variable to store the calorie input for each meal, and then add it to total_calories?

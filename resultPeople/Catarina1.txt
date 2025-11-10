@@ -1,0 +1,63 @@
+Choose a scenario:
+
+Calory Tracker
+Bug Hunt
+Ride Sharing
+Medicine
+1
+
+Calory Tracker scenario selected.
+
+Here is the scenario description:
+
+You're building a calorie tracker. It should ask how many meals were eaten, take calorie inputs, then give feedback based on total calories. What's the first part you'll implement?
+
+For this scenario you don't need to write code, you can just state what you would do to complete the task.
+
+i would create variables to hold how many meals were eaten and calories inputs
+
+Exactly! You'll need to know how many meals to loop through. To get the meal count from the user, you can use the input() function to capture their response. Think about how you can convert that input into an integer and store it in a variable. In Python, you can do this by using the int() function to convert the input into an integer, like this: meal_count = int(input("How many meals did you have today? ")). This way, you'll have the meal count stored in the meal_count variable, ready to be used in your loop.
+
+Next Steps: It looks like you're on the right track with creating variables to hold the meal count and calorie inputs! Now, let's focus on getting that meal count from the user. You mentioned variables, but how will you assign the user's input to one of them? Remember, you want to store the meal count as an integer. Think about how you can use the input() function to get the user's response and then convert it into an integer.
+
+I would print a message asking for the input and then capture it in the correct variable
+
+Great thinking! You're really close to getting that meal count from the user. To capture their response, try using input() and think about how you can assign the result to a variable. Remember, you want to store the meal count as an integer, so you'll need to use int() to convert the input. What if you asked the user "How many meals did you have today?" and then stored their response in a variable?
+
+Next Steps: Excellent job on capturing the user's input! Now that you have the meal count stored in a variable, it's time to think about how you can use a loop to get all the calorie inputs in a single run. How do you think you can structure your loop to ask for calorie input for each meal?
+
+Given the number of meals i would use a for loop
+
+Now that you have the meal count stored in a variable, let's think about how you can use a for loop to iterate through each meal. Inside the loop, you'll need to ask the user for the calorie input for each meal. Consider using a prompt like "Enter calories for meal X" and store the input in a variable, such as calories_per_meal. Remember, you want to add each meal's calories to a running total.
+
+Next Steps: You're inside the loop now, and it's time to collect the calorie data for each meal. To do that, you'll need to ask the user to input the calories for each meal. Think about how you can use a prompt like "Enter calories for meal X" to get the input, and then store it in a variable, like calories_per_meal. Remember, you want to add each meal's calories to a running total. How will you make sure you're adding the correct value to your total?
+
+I would use a single variable that gets updated each time I ask for a meal's calories. This variable would start with value 0 and would add each meal's calories incrementally.
+
+To keep a running total of calories, initialize a variable to 0 before the loop. Then, inside the loop, use += to add each meal's calories incrementally. Specifically, update the total by adding calories_per_meal to it, like this: total_calories += calories_per_meal. This way, you'll accumulate the total calories from each meal.
+
+Next Steps: You're accumulating calories incrementally. Now, to get the calorie input for each meal, think about how you can use input() to ask the user for the calorie data. What if you prompted the user with something like "Enter calories for meal X"? How can you store that input in a variable, like calories_per_meal, to use in your running total calculation?
+
+I would need to have a variable inside the for loop that it would hold the input() reply from the user
+
+Now that you're using a variable inside the for loop, think about how you can use input() to ask the user for the calorie data and store it in that variable. Consider a prompt like "Enter calories for meal X" and then store the input in calories_per_meal. How can you use this stored value to update your running total? Perhaps you can use the += operator to add calories_per_meal to your total_calories variable.
+
+Next Steps: You're now holding the calorie input for each meal in a variable. Nice work! Now, think about how you can use this variable to output the total calories. You'll want to display the total calories and provide a message based on that total. Consider using if, elif, and else statements to give personalized feedback. For example, you could say "Good job staying under 2000 calories!" if the total is under 2000, or "Be careful, you're above 2500 calories!" if it's above 2500. How can you structure your output to provide this kind of feedback?
+
+The variable outside the for loop that would be incremented each time a meal's calories is registered would need to be evaabove 200luated in an if, elif and else statement. For example, if above 2000 calories total then print to user X etc
+
+Excellent thinking! You're correct that the total calories should be evaluated in an if, elif, and else statement to provide personalized feedback. For a clear structure, try setting specific thresholds for calorie ranges, like 2000 or 2500, and craft corresponding messages. Now, check if total_calories < 2000, elif total_calories < 2500, and else to provide feedback. What message will you give when the total calories exceed 2500?
+
+Next Steps: You're thinking ahead to provide personalized feedback based on the total calories! Now, let's make sure we catch any invalid input from the user. How about adding a simple check to ensure the user didn't enter a negative number or zero for the meal count or calorie input? Think about how you can use a while loop to keep asking for input until the user provides a valid number.
+
+In the for loop that asks for the meal's calories, we can evaluate the user input until the input is a valid one using a while loop.
+
+Great idea about using a while loop to validate user input! Before we dive into that, let's ensure you're correctly updating the total calories inside the loop. Think about how you can use the calories_per_meal variable to increment the total_calories using the += operator. Make sure you're adding the meal's calories to the running total. Then, we can explore how to implement a while loop to handle invalid input, like negative numbers or zero.
+
+I would total_calories += calories_per_meal
+
+Let's refine your approach to updating the total calories. You're on the right track with total_calories += calories_per_meal. To ensure calories_per_meal is valid, think about using a simple while loop to check if the user input is negative or zero. For instance, while calories_per_meal <= 0: calories_per_meal = int(input("Please enter a valid calorie amount: ")). This will prompt the user to re-enter a valid calorie amount until they provide a positive number.
+
+
+
+What is up?

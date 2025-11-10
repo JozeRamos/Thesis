@@ -1,0 +1,65 @@
+Completed: 9:32
+
+Choose a scenario:
+
+    Calory Tracker
+    Bug Hunt
+    Ride Sharing
+    Medicine
+
+2
+
+Bug Hunt scenario selected.
+
+Here is the scenario description:
+
+Your supervisor reports that students are receiving inaccurate final grades, some students are getting grades of 0 or 'None' while others are getting scores that are not adding up correctly. The grading system was quickly written by an intern and now must be debugged. You are given access to the script and a sample dataset. Your job is to identify the bugs, correct them, and ensure the output is reliable. What is your first step?
+
+check if the code is correctly dealing with faulty csv
+
+Within the grade calculation function, let's investigate how the script handles CSV input. Are there any implicit assumptions about the CSV file's structure or content that might not always hold true? For instance, does the script account for scenarios where the CSV file contains empty or invalid values, inconsistent formatting, or unexpected characters that could be causing issues? Consider exploring how the script reads and processes the CSV file to identify potential pitfalls.
+
+it assumes the csv file always has perfect structure, doesnt take into account faulty structure
+
+Let's dig deeper into the code together to see how it handles faulty CSV data. Great point about the assumption of a perfect CSV structure! Check if the script has try-except blocks or input validation mechanisms in place to deal with faulty CSV data, such as empty rows, inconsistent column orders, or invalid characters. Are there any signs of error handling that might be triggered when the script encounters faulty CSV data?
+
+Next Steps: Excellent observation about the script's assumption of a perfect CSV structure! Now, let's shift our focus to the grade calculation itself. Are the weights for assignments and tests being applied correctly? Think about how the script is combining these scores - are there any opportunities for the calculations to go awry, leading to consistently high grades?
+
+computations can go awry if the values received are not numbers
+
+Great point about incorrect values! Let's investigate how the script handles non-numeric inputs in the grade calculation. Are there any specific try-except blocks or input validation mechanisms in place to catch errors when assigning scores? How would the script behave if it encountered a non-numeric value - would it raise an error or produce an incorrect result?
+
+no, the script is not ready to deal with that
+
+Let's revisit the script's behavior when it encounters non-numeric values in the 'assignments' or 'tests' variables. Imagine a scenario where a student's assignment score is listed as 'N/A' instead of a number. Would the script raise a ValueError, produce an incorrect result, or behave in some other way that could lead to inconsistent grades? Think about how the script handles invalid inputs and how that might impact the final grade calculation.
+
+it raises a value error because the value error is only thrown in the calculate_final_grade function
+
+Great catch on the ValueError being raised in the calculate_final_grade function! Now, let's explore how to handle non-numeric inputs more robustly. How could you modify the script to gracefully handle scenarios where the 'assignments' or 'tests' variables contain non-numeric values, such as using try-except blocks or input validation mechanisms to provide a fallback value instead of raising an error?
+
+if a non-numeric number is found, exit the program or throw an error
+
+I understand your idea of exiting the program or throwing an error when encountering non-numeric values. However, let's consider a more elegant approach. What if we used a try-except block to catch ValueError exceptions and provide a default score, say 0, when the script encounters non-numeric inputs? This would ensure we still get accurate final grades for all students.
+
+when theres a non-numeric value, catch the error an use 0
+
+I understand your idea of catching the error and using 0. What if we used a try-except block to catch ValueError exceptions and validate input data earlier in the process? This could ensure we handle non-numeric values in the 'assignments' and 'tests' variables more robustly. How would you implement this in the script to provide a fallback value instead of raising an error?
+
+Next Steps: Great approach to handling non-numeric values! Now, let's shift our focus to the grade calculations. Have you noticed that the final grades seem too high compared to expected values? Could there be an issue with the weightings assigned to assignments and tests in the calculate_final_grade function? Think about how these weights are currently set and whether they might be contributing to the inflated grades.
+
+the weights dont add up to 100% but 110%
+
+Exactly! If the weights add up to 110%, it would amplify the individual components, resulting in higher overall grades. To fix this, we need to adjust the weights so they sum up to 100%. Consider allocating 70% to assignments and 30% to tests. How would you propose we redistribute the weights to ensure accurate grading?
+
+Next Steps: Great job on identifying the issue with the weights! Now, let's tackle the problem of missing grades despite partial data availability. Think about how the system currently handles students with incomplete data. Are we doing enough to ensure that every student receives a final grade, even if they're missing some scores? Consider how a fallback value could help fill in the gaps. How would you propose we modify the script to handle these situations more effectively?
+
+need to divide the total by the number of non-zero values in the list and not all the values since zero is what we used for the missing
+
+Congratulations you completed the scenario.
+
+Choose a new scenario:
+
+    Calory Tracker
+    Bug Hunt
+    Ride Sharing
+    Medicine

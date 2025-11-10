@@ -1,0 +1,58 @@
+Choose a scenario:
+
+Calory Tracker
+Bug Hunt
+Ride Sharing
+Medicine
+Invalid option. Please choose from the options provided.
+
+Loop Scenario
+1
+
+Calory Tracker scenario selected.
+
+Here is the scenario description:
+
+You're building a calorie tracker. It should ask how many meals were eaten, take calorie inputs, then give feedback based on total calories. What's the first part you'll implement?
+
+For this scenario you don't need to write code, you can just state what you would do to complete the task.
+
+So i want an APP that does the following as a calorie calculator:
+
+You've just opened our daily calorie tracker. You're excited to start tracking your daily calorie intake. What's the first thing you need to tell the tracker? How will you let it know how many meals you've had today? Think about what would make it easy for our tracker to understand and efficiently collect that information.
+
+So the first question to be asked is how many meals have been consumed on those 24 hours
+
+Let's try to ask your tracker a question that will help it understand how many meals you had today. Why not think about asking something like, "How many meals did you have today?" and store their response in a variable? This way, your tracker can easily understand and efficiently collect the info, and you'll have a solid starting point for your calorie tracking journey!
+
+Next Steps: Now that we've got the number of meals stored, let's think about how we're going to keep track of the total calories consumed. What do you think we should use to store the sum of calories from all those meals?
+
+Ok, so store the answer as a variable and then for each number between 1 and the value of the variable(1,2 ,3, ....) ask the calories of that meal, save it as an array of values
+
+Let's break it down. You mentioned storing the answer as a variable and then using a loop to ask for calories of each meal, saving them as an array of values. That's a great start! However, for this scenario, we can simplify things by using a single variable to store the total calories. We can initialize this variable to 0, so we can accurately add up the calories from each meal. How about we focus on that for now, and then we can think about how to ask for the calories of each meal in a loop?
+
+Next Steps: It sounds like you're on the right track. Now, let's focus on initializing that total variable. Think about how we can set it up to store the sum of calories from each meal. What type of value would make sense to start with, so we can accurately add up the calories later?
+
+Ok so u just start by considering the total calories to be 0 and each loop cycle u can add up that meal calory, meaning each cycle total calories value Will change
+
+Nice job thinking ahead! By initializing the total calories to 0, you're setting yourself up to add each meal's calories in the loop. Now, how can you use the number of meals to control the loop and ask for each meal's calories?
+
+Next Steps: You're making great progress! It sounds like you have a clear idea of how to initialize the total calories variable and add up each meal's calories in the loop. Now, let's focus on using the number of meals to control the loop. Think about how you can use the variable that stores the number of meals to determine how many times the loop should run. How can you use that variable to create a loop that will ask for each meal's calories?
+
+The stop cirteira for the loop cycle Will be of course like until the loop cycle is ran for the number of Times equal to the number of meals
+
+You've got the loop setup correct, Junior Developer! Now, since we're tracking calories for each meal, let's ask the user to input calories for each meal inside the loop. A prompt like "Enter the calories for meal {}" would work perfectly, where the {} is replaced with the current meal number. This way, the user knows exactly which meal they're inputting calories for.
+
+Next Steps: You're inside the loop now, Junior Developer! You've set it up to run for the number of meals. Now, let's focus on collecting the calorie input for each meal. Think about how you can use the input() function to get the calorie data for each meal. How can you phrase the prompt to make it clear which meal the user is inputting calories for?
+
+It can be as u said
+
+Let's refine our calorie tracking process. Now that we have the loop set up, think about how you can use a variable to store each meal's calorie input. How can you update the total calories variable inside the loop to ensure we accurately track the daily calorie intake?
+
+Next Steps: Let's refine our calorie tracking process. You're on the right track, Junior Developer! Now, think about how you can add each meal's calories to the totalCalories variable inside the loop. How can you use the input from the user to update the totalCalories variable accurately? Remember, we want to ensure we're tracking the daily calorie intake correctly.
+
+So basically what i want is something like Totalcalorie=totalcalorie+ answer
+
+Exactly, Junior Developer! To update totalCalories, you need to add the current meal's calories to it. Assign the user's input to mealCalories using int(input("Enter calories for meal {}: ".format(mealNumber))). Then, update totalCalories by adding mealCalories to it, like this: totalCalories += mealCalories. This will ensure you're tracking daily calorie intake accurately.
+
+Next Steps: Now that you've got the total calories, it's time to give the user some feedback. Think about how you can use if/elif/else statements to provide a personalized message based on the total calorie count. For example, you could give a different message for under 1200 calories, 1200-1800 calories, or over 1800 calories. How can you structure your if/elif/else statements to provide this kind of feedback?

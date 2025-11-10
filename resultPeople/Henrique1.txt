@@ -1,0 +1,45 @@
+1
+
+Calory Tracker scenario selected.
+
+Here is the scenario description:
+
+You're building a calorie tracker. It should ask how many meals were eaten, take calorie inputs, then give feedback based on total calories. What's the first part you'll implement?
+
+For this scenario you don't need to write code, you can just state what you would do to complete the task.
+
+First I'm going to make a button to record when a meal is being taken, and how many calories that meal have
+
+Let's focus on the essential information we need to collect from the user. To structure our program, we should ask how many meals they had today. This will help us loop through each meal and get the calorie input. Think about how you can store this number in a variable.
+
+I'd store the number of meals in an int
+
+Now that you've decided to store the number of meals in an integer variable, think about how you can ask the user to input that number. Using input() is a great start, but don't forget to convert the input to an integer using int() to avoid potential errors. Try writing a prompt that asks the user how many meals they had today, and make sure to store the result in your variable.
+
+Next Steps: Nice move! You've got the number of meals stored in an integer variable. Now, think about how you'll keep track of the total calories consumed. You'll need a separate variable to store the sum of calories from each meal. What type of variable would be best suited for this purpose, and how would you initialize it?
+
+calories = int(input("How many calories did that meal have"))
+
+Now that we have the number of meals, let's think about how we'll keep track of the total calories consumed. You're one step closer to creating a personalized daily calorie tracker! To accurately add up each meal's calories, we need a separate variable. What type of variable would be best suited for this purpose, and how would you initialize it to ensure we start from a clean slate?
+
+Next Steps: Great thinking on storing the number of meals! Now, let's think about how we'll keep track of the total calories consumed. You're one step closer to creating a personalized daily calorie tracker! To accurately add up each meal's calories, we need a separate variable. What type of variable would be best suited for this purpose, and how would you initialize it to ensure we start from a clean slate?
+
+meals = int(input("Number of meals")) for i in range(meals):
+
+Great thinking on setting up the loop! Your for i in range(meals): structure is spot on. Now, inside this loop, let's ask the user for the calories of each meal. I'd suggest using input() again to collect the calorie input and a prompt like 'Enter calories for meal {}' to make it more user-friendly. Initialize a separate variable, say total_calories, to keep track of the total calories consumed, and then add each meal's calories to it. How will you do that?
+
+Next Steps: You're making great progress! Inside the loop, let's focus on collecting the calories for each meal. You're on the right track with using input() again. How about using a format string to include the meal number in the prompt, like "Enter calories for meal {}".format(i+1)? This will make it more user-friendly and help the user keep track of which meal they're entering calories for.
+
+meals = int(input("Number of meals")) calories_total = 0 for i in range(meals): calories_total += int(input(fCalories in meal ${i}))
+
+Now that you have the total calories, think about providing a health message based on that value. Create an if-elif-else statement to check if the total calories are within a healthy range. For a specific example, if the total calories are less than 1500, display "You're doing great! Your daily calorie intake is within a healthy range."
+
+Next Steps: Excellent work on summing up the calories! Now, think about how you'll use this total to provide a health message. Your if-elif-else statement should consider a range of healthy calorie intake values. What conditions would you check to determine if the user's daily calorie intake is within a healthy range?
+
+if calories_total < 1500: print("You're doing great! Your daily calorie intake is within a healthy range.")
+
+Great job on getting this far! Now, let's take it to the next level by making your health message more informative. What if we added an elif clause to check for calorie intake between 1500 and 2500, and another for intake above 2500? For instance, if the user's daily calorie intake is between 1500 and 2500, we could display a message like "You're doing okay, but be mindful of your daily calorie intake." By adding more conditions, we can provide a more accurate and informative health message to the user. Can you try incorporating these conditions into your code?
+
+if calories_total < 1500: print("You're doing great! Your daily calorie intake is within a healthy range.") elif calories_total <2500: else: print("You're doing okay, but be mindful of your daily calorie intake.")
+
+Great thinking on refining your health message! Consider adding specific conditions for when the total calories are exactly 1500 or 2500. For instance, you could use if calories_total < 1500: ..., elif calories_total == 1500: print("You're at the threshold! Your daily calorie intake is exactly 1500."), elif calories_total < 2500: ..., elif calories_total == 2500: print("You're at another threshold! Your daily calorie intake is exactly 2500."), and finally, else: .... Don't forget to include a print statement in each clause to display the corresponding health message. What specific conditions would you add, and how would you phrase the health messages for each?
